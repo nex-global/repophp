@@ -1,0 +1,170 @@
+/* ==============================================================================
+   NexFonts - Self-Hosted Typography Suite for NexSpace Ecosystem
+   Derived from Roboto & Roboto Mono under Apache License 2.0
+   ============================================================================== */
+
+/* --- UI / Body Font (Nex Sans / Nex) --- */
+
+/* Weight 100: Thin */
+@font-face {
+  font-family: 'Nex';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url('./Nex-Thin.woff2') format('woff2');
+}
+
+/* Weight 400: Regular */
+@font-face {
+  font-family: 'Nex';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./Nex-Regular.woff2') format('woff2');
+}
+
+/* Weight 500: Medium */
+@font-face {
+  font-family: 'Nex';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./Nex-Medium.woff2') format('woff2');
+}
+
+/* Weight 700: Bold */
+@font-face {
+  font-family: 'Nex';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./Nex-Bold.woff2') format('woff2');
+}
+
+/* Weight 900: ExtraBold (Black) */
+@font-face {
+  font-family: 'Nex';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('./Nex-ExtraBold.woff2') format('woff2');
+}
+
+/* --- Brand Alias: Nex Sans --- */
+
+@font-face {
+  font-family: 'Nex Sans';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url('./Nex-Thin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./Nex-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./Nex-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./Nex-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nex Sans';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('./Nex-ExtraBold.woff2') format('woff2');
+}
+
+/* --- Compatibility Alias: Roboto --- */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url('./Nex-Thin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./Nex-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./Nex-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./Nex-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('./Nex-ExtraBold.woff2') format('woff2');
+}
+
+/* --- Terminal / Code Font (Nex Mono) --- */
+
+@font-face {
+  font-family: 'Nex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./Nex-Mono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Nex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./Nex-Mono-Medium.woff2') format('woff2');
+}
+
+/* Compatibility Alias: Roboto Mono */
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./Nex-Mono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./Nex-Mono-Medium.woff2') format('woff2');
+}

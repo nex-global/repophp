@@ -10,12 +10,12 @@ KEYRING_DIR="/etc/apt/keyrings"
 SOURCES_DIR="/etc/apt/sources.list.d"
 
 if [ "$(id -u)" -ne 0 ]; then
-    echo "❌ Vui lòng chạy lệnh với quyền root hoặc sudo: curl -fsSL ${REPO_URL}/setup.sh | sudo bash"
+    echo "[ERROR] Vui lòng chạy lệnh với quyền root hoặc sudo: curl -fsSL ${REPO_URL}/setup.sh | sudo bash"
     exit 1
 fi
 
 echo "============================================================"
-echo "🚀 Đang thiết lập kho phần mềm chính thức NexSpace..."
+echo "[INFO] Đang thiết lập kho phần mềm chính thức NexSpace..."
 echo "============================================================"
 
 # Xác định tên bản phân phối (noble, jammy, bookworm...)
@@ -35,14 +35,14 @@ else
     echo "deb [trusted=yes] ${REPO_URL} ${CODENAME} main" > "${SOURCES_DIR}/nexspace.list"
 fi
 
-echo "  [✓] Đã tạo file nguồn: ${SOURCES_DIR}/nexspace.list"
-echo "  [✓] Đang cập nhật chỉ mục APT..."
+echo "  [OK] Đã tạo file nguồn: ${SOURCES_DIR}/nexspace.list"
+echo "  [OK] Đang cập nhật chỉ mục APT..."
 apt-get update -o Dir::Etc::sourcelist="sources.list.d/nexspace.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0" -qq
 
 echo "============================================================"
-echo "🎉 Thiết lập kho NexSpace hoàn tất!"
-echo "👉 Bạn có thể cài đặt các runtime ngay bây giờ:"
+echo "[SUCCESS] Thiết lập kho phần mềm NexSpace hoàn tất."
+echo "Bạn có thể cài đặt các runtime:"
+echo "   sudo apt install -y nexphp84"
 echo "   sudo apt install -y nexphp83"
 echo "   sudo apt install -y nexphp82"
-echo "   sudo apt install -y nexphp81"
 echo "============================================================"

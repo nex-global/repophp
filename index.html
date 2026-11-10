@@ -3,206 +3,463 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexPHP Official Runtimes Repository - repophp.nexspace.dev</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>repophp.nexspace.dev | NexSpace Official PHP Runtimes</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <link rel="stylesheet" href="./fonts/nexfont.css">
     <style>
         :root {
-            --bg: #090d16;
-            --card-bg: rgba(18, 24, 38, 0.7);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --primary: #3b82f6;
-            --primary-glow: rgba(59, 130, 246, 0.35);
-            --accent: #10b981;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --code-bg: #030712;
+            --bg: #09090b;
+            --bg-card: #0c0c0e;
+            --bg-card-hover: #141417;
+            --bg-input: #121215;
+            --bg-code: #050507;
+            --border-subtle: #27272a;
+            --border-strong: #3f3f46;
+            --text-primary: #f4f4f5;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --btn-bg: #ffffff;
+            --btn-text: #09090b;
+            --btn-hover: #e4e4e7;
+            --radius-sm: 4px;
+            --radius-md: 6px;
+            --radius-lg: 8px;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Nex', 'Nex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             background-color: var(--bg);
-            color: var(--text-main);
+            color: var(--text-primary);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 3rem 1.5rem;
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 60%),
-                radial-gradient(circle at 80% 50%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        .container { max-width: 860px; width: 100%; }
-        header { text-align: center; margin-bottom: 2.5rem; }
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.35rem 0.85rem;
-            background: rgba(59, 130, 246, 0.12);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 9999px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #60a5fa;
-            margin-bottom: 1.25rem;
+
+        .container {
+            max-width: 920px;
+            width: 100%;
         }
-        h1 {
-            font-size: 2.75rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            margin-bottom: 0.75rem;
-            background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        p.subtitle {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 620px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 1rem;
-            padding: 1.75rem;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(16px);
-            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.5);
-        }
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .code-box {
-            position: relative;
-            background: var(--code-bg);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 0.65rem;
-            padding: 1.1rem 1.25rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.95rem;
-            color: #38bdf8;
-            overflow-x: auto;
+
+        header {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 2.5rem;
         }
-        .code-box code { user-select: all; }
-        .grid {
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .brand svg {
+            width: 28px;
+            height: 28px;
+            display: block;
+        }
+
+        .brand-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+
+        .header-tag {
+            font-family: 'Nex Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-subtle);
+            padding: 0.25rem 0.65rem;
+            border-radius: var(--radius-sm);
+            background: var(--bg-card);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero {
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-family: 'Nex Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            background: var(--bg-input);
+            border: 1px solid var(--border-subtle);
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1rem;
+            letter-spacing: 0.04em;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        p.description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 720px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-secondary);
+        }
+
+        .code-box {
+            position: relative;
+            background: var(--bg-code);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 0.9rem 1.15rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .code-box code {
+            font-family: 'Nex Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            white-space: nowrap;
+            overflow-x: auto;
+            user-select: all;
+        }
+
+        .copy-btn {
+            font-family: 'Nex Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--btn-text);
+            background: var(--btn-bg);
+            border: 1px solid var(--btn-bg);
+            border-radius: var(--radius-sm);
+            padding: 0.4rem 0.75rem;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .copy-btn:hover {
+            background: var(--btn-hover);
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            margin-top: 0.5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+            text-align: left;
+        }
+
+        th {
+            font-family: 'Nex Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
+        }
+
+        .pkg-tag {
+            font-family: 'Nex Mono', monospace;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .badge-arch {
+            font-family: 'Nex Mono', monospace;
+            font-size: 0.7rem;
+            border: 1px solid var(--border-subtle);
+            padding: 0.15rem 0.4rem;
+            border-radius: var(--radius-sm);
+            color: var(--text-muted);
+        }
+
+        .cmd-snippet {
+            font-family: 'Nex Mono', monospace;
+            font-size: 0.8rem;
+            background: var(--bg-code);
+            padding: 0.3rem 0.55rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .cmd-snippet:hover {
+            border-color: var(--border-strong);
+        }
+
+        .meta-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
             margin-top: 1rem;
         }
-        .version-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 0.75rem;
-            padding: 1.1rem;
-            transition: all 0.2s ease;
+
+        .meta-item {
+            background: var(--bg-input);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 1rem;
         }
-        .version-card:hover {
-            border-color: rgba(59, 130, 246, 0.4);
-            transform: translateY(-2px);
-            background: rgba(59, 130, 246, 0.04);
-        }
-        .version-tag {
-            font-weight: 700;
-            font-size: 1.15rem;
-            color: #f1f5f9;
-        }
-        .version-meta {
-            font-size: 0.8rem;
+
+        .meta-label {
+            font-family: 'Nex Mono', monospace;
+            font-size: 0.7rem;
             color: var(--text-muted);
-            margin-top: 0.35rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 0.35rem;
         }
-        .version-install {
-            margin-top: 0.75rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-            color: #a7f3d0;
-            background: rgba(16, 185, 129, 0.1);
-            padding: 0.35rem 0.5rem;
-            border-radius: 0.4rem;
-            border: 1px solid rgba(16, 185, 129, 0.2);
+
+        .meta-val {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
         }
+
         footer {
-            margin-top: auto;
-            text-align: center;
-            font-size: 0.85rem;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            padding-top: 2rem;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--text-primary);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 1.5rem 1rem; }
+            h1 { font-size: 1.75rem; }
+            .meta-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            footer { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="badge">
-                <span>●</span> Official APT Repository
+            <div class="brand">
+                <svg viewBox="0 0 41.245 41.245" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 41.245 L0 0 L41.245 0 L41.245 41.245 L20.287 41.245 C20.287 37.216 20.288 32.629 20.289 31.766 C20.298 30.657 20.296 29.533 20.293 27.78 C20.292 27.576 20.222 27.23 20.414 27.096 C20.627 26.947 22.589 27.094 26.064 27.045 C29.03 27.003 31.742 25.279 33.187 22.589 C33.667 21.696 34.672 19.086 33.884 16.411 C32.696 12.376 30.087 10.909 28.52 10.408 C28.195 10.304 27.892 10.167 27.552 10.101 C26.469 9.888 23.372 9.936 20.927 9.936 C19.422 9.935 17.916 9.95 16.411 9.946 C14.525 9.94 12.639 9.933 10.752 9.929 C9.809 9.927 8.751 9.851 7.989 10.543 C6.877 11.551 7.094 11.879 7.089 16.307 C7.089 16.97 7.003 18.184 7.191 18.776 C7.647 20.21 10.339 22.064 11.675 23.498 C12.133 23.99 12.305 23.686 12.366 23.448 C12.444 23.145 12.384 22.244 12.378 21.884 C12.287 16.863 12.421 16.813 13.074 16.306 C13.722 15.803 14.56 15.885 15.325 15.895 C15.385 15.896 21.289 15.919 24.697 15.902 C24.697 15.902 27.744 15.517 28.188 17.977 C28.449 19.422 27.456 20.94 26.024 21.106 C25.732 21.14 23.676 21.114 18.78 21.12 C15.442 21.125 14.647 21.096 14.661 24.719 C14.668 26.443 14.659 28.167 14.655 29.891 C14.655 29.927 14.656 29.963 14.658 30.001 L14.655 41.245 Z" fill="#ffffff"/>
+                </svg>
+                <span class="brand-name">NexSpace</span>
             </div>
-            <h1>repophp.nexspace.dev</h1>
-            <p class="subtitle">Kho lưu trữ gói phân phối chính thức các phiên bản Native PHP Runtimes tối ưu hóa cho <strong>NexEngine</strong> và <strong>NexRealm</strong>.</p>
+            <div class="header-tag">Official APT Mirror</div>
         </header>
 
+        <section class="hero">
+            <div class="hero-badge">REPOPHP.NEXSPACE.DEV</div>
+            <h1>Native PHP Runtimes Repository</h1>
+            <p class="description">Kho lưu trữ APT chính thức cung cấp các phiên bản PHP độc lập, tích hợp sâu kiến trúc NexSAPI và tương thích tuyệt đối với phân vùng cô lập người dùng NexRealm.</p>
+        </section>
+
         <div class="card">
-            <div class="card-title">
-                ⚡ 1-Click APT Setup (Ubuntu / Debian)
+            <div class="card-header">
+                <span class="card-title">Thiết lập nguồn APT (1-Click Setup)</span>
             </div>
             <div class="code-box">
-                <code>curl -fsSL https://repophp.nexspace.dev/setup.sh | sudo bash</code>
+                <code id="setup-cmd">curl -fsSL https://repophp.nexspace.dev/setup.sh | sudo bash</code>
+                <button class="copy-btn" onclick="copyText('setup-cmd', this)">COPY</button>
             </div>
         </div>
 
         <div class="card">
-            <div class="card-title">
-                📦 Các Phiên Bản PHP Sẵn Sàng (amd64 / arm64)
+            <div class="card-header">
+                <span class="card-title">Danh mục gói runtime sẵn sàng</span>
+                <span class="header-tag">6 Versions</span>
             </div>
-            <div class="grid">
-                <div class="version-card">
-                    <div class="version-tag">PHP 8.4.27</div>
-                    <div class="version-meta">NexSAPI + FastCGI Daemon</div>
-                    <div class="version-install">apt install nexphp84</div>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tên gói</th>
+                            <th>Phiên bản</th>
+                            <th>Kiến trúc</th>
+                            <th>Động cơ</th>
+                            <th>Lệnh cài đặt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="pkg-tag">nexphp84</td>
+                            <td>8.4.27</td>
+                            <td><span class="badge-arch">amd64</span> <span class="badge-arch">arm64</span></td>
+                            <td>NexSAPI / FastCGI</td>
+                            <td><code class="cmd-snippet" onclick="copySnippet('sudo apt install -y nexphp84', this)">apt install nexphp84</code></td>
+                        </tr>
+                        <tr>
+                            <td class="pkg-tag">nexphp83</td>
+                            <td>8.3.6</td>
+                            <td><span class="badge-arch">amd64</span> <span class="badge-arch">arm64</span></td>
+                            <td>NexSAPI / FastCGI</td>
+                            <td><code class="cmd-snippet" onclick="copySnippet('sudo apt install -y nexphp83', this)">apt install nexphp83</code></td>
+                        </tr>
+                        <tr>
+                            <td class="pkg-tag">nexphp82</td>
+                            <td>8.2.35</td>
+                            <td><span class="badge-arch">amd64</span> <span class="badge-arch">arm64</span></td>
+                            <td>NexSAPI / FastCGI</td>
+                            <td><code class="cmd-snippet" onclick="copySnippet('sudo apt install -y nexphp82', this)">apt install nexphp82</code></td>
+                        </tr>
+                        <tr>
+                            <td class="pkg-tag">nexphp81</td>
+                            <td>8.1.34 / 8.1.31</td>
+                            <td><span class="badge-arch">amd64</span> <span class="badge-arch">arm64</span></td>
+                            <td>NexSAPI / FastCGI</td>
+                            <td><code class="cmd-snippet" onclick="copySnippet('sudo apt install -y nexphp81', this)">apt install nexphp81</code></td>
+                        </tr>
+                        <tr>
+                            <td class="pkg-tag">nexphp80</td>
+                            <td>8.0.30</td>
+                            <td><span class="badge-arch">amd64</span> <span class="badge-arch">arm64</span></td>
+                            <td>NexSAPI / FastCGI</td>
+                            <td><code class="cmd-snippet" onclick="copySnippet('sudo apt install -y nexphp80', this)">apt install nexphp80</code></td>
+                        </tr>
+                        <tr>
+                            <td class="pkg-tag">nexphp74</td>
+                            <td>7.4.33</td>
+                            <td><span class="badge-arch">amd64</span> <span class="badge-arch">arm64</span></td>
+                            <td>NexSAPI / FastCGI</td>
+                            <td><code class="cmd-snippet" onclick="copySnippet('sudo apt install -y nexphp74', this)">apt install nexphp74</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Cấu hình & Tích hợp NexRealm Sandbox</span>
+            </div>
+            <p class="description" style="margin-bottom: 1rem;">Sau khi cài đặt gói runtime, khởi tạo phân vùng cô lập người dùng và xuất cấu hình pool riêng biệt:</p>
+            <div class="code-box">
+                <code id="nxr-cmd">sudo nxr nexphp-config alice --php-version 8.4 --output-dir /etc/nexspace/nexphp/pool.d</code>
+                <button class="copy-btn" onclick="copyText('nxr-cmd', this)">COPY</button>
+            </div>
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <div class="meta-label">Cô lập tiến trình</div>
+                    <div class="meta-val">PID & Mount Namespaces</div>
                 </div>
-                <div class="version-card">
-                    <div class="version-tag">PHP 8.3.6</div>
-                    <div class="version-meta">NexSAPI + FastCGI Daemon</div>
-                    <div class="version-install">apt install nexphp83</div>
+                <div class="meta-item">
+                    <div class="meta-label">Bảo vệ mạng</div>
+                    <div class="meta-val">NetGuard Anti-SSRF</div>
                 </div>
-                <div class="version-card">
-                    <div class="version-tag">PHP 8.2.35</div>
-                    <div class="version-meta">NexSAPI + FastCGI Daemon</div>
-                    <div class="version-install">apt install nexphp82</div>
-                </div>
-                <div class="version-card">
-                    <div class="version-tag">PHP 8.1.34 / 8.1.31</div>
-                    <div class="version-meta">NexSAPI + FastCGI Daemon</div>
-                    <div class="version-install">apt install nexphp81</div>
-                </div>
-                <div class="version-card">
-                    <div class="version-tag">PHP 8.0.30</div>
-                    <div class="version-meta">NexSAPI + FastCGI Daemon</div>
-                    <div class="version-install">apt install nexphp80</div>
-                </div>
-                <div class="version-card">
-                    <div class="version-tag">PHP 7.4.33</div>
-                    <div class="version-meta">NexSAPI + FastCGI Daemon</div>
-                    <div class="version-install">apt install nexphp74</div>
+                <div class="meta-item">
+                    <div class="meta-label">Kiểm soát tài nguyên</div>
+                    <div class="meta-val">Cgroups v2 Limits</div>
                 </div>
             </div>
         </div>
 
         <footer>
-            © 2026 NexSpace Engineering Team. High-Performance Server Ecosystem.
+            <div>NexSpace Unified Server Ecosystem. Pure Rust Infrastructure.</div>
+            <div><a href="https://repophp.nexspace.dev/setup.sh">setup.sh</a> &bull; <a href="https://github.com/nex-global/repophp">GitHub Mirror</a></div>
         </footer>
     </div>
+
+    <script>
+        function copyText(elementId, btn) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.innerText;
+                btn.innerText = 'COPIED';
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                }, 2000);
+            });
+        }
+
+        function copySnippet(text, el) {
+            navigator.clipboard.writeText(text).then(() => {
+                const orig = el.innerText;
+                el.innerText = 'COPIED TO CLIPBOARD';
+                setTimeout(() => {
+                    el.innerText = orig;
+                }, 1500);
+            });
+        }
+    </script>
 </body>
 </html>
