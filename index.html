@@ -8,25 +8,6 @@
     <link rel="stylesheet" href="./fonts/nexfont.css">
     <style>
         :root {
-            --bg: #09090b;
-            --bg-card: #0c0c0e;
-            --bg-card-hover: #141417;
-            --bg-input: #121215;
-            --bg-code: #050507;
-            --border-subtle: #27272a;
-            --border-strong: #3f3f46;
-            --text-primary: #f4f4f5;
-            --text-secondary: #a1a1aa;
-            --text-muted: #71717a;
-            --btn-bg: #ffffff;
-            --btn-text: #09090b;
-            --btn-hover: #e4e4e7;
-            --radius-sm: 4px;
-            --radius-md: 6px;
-            --radius-lg: 8px;
-        }
-
-        [data-theme="light"] {
             --bg: #ffffff;
             --bg-card: #f9f9fb;
             --bg-card-hover: #f1f1f4;
@@ -40,6 +21,25 @@
             --btn-bg: #09090b;
             --btn-text: #ffffff;
             --btn-hover: #27272a;
+            --radius-sm: 4px;
+            --radius-md: 6px;
+            --radius-lg: 8px;
+        }
+
+        [data-theme="dark"] {
+            --bg: #09090b;
+            --bg-card: #0c0c0e;
+            --bg-card-hover: #141417;
+            --bg-input: #121215;
+            --bg-code: #050507;
+            --border-subtle: #27272a;
+            --border-strong: #3f3f46;
+            --text-primary: #f4f4f5;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --btn-bg: #ffffff;
+            --btn-text: #09090b;
+            --btn-hover: #e4e4e7;
         }
 
         * {
@@ -90,19 +90,19 @@
         }
 
         .logo-dark {
-            display: block;
+            display: none;
         }
 
         .logo-light {
-            display: none;
-        }
-
-        [data-theme="light"] .logo-dark {
-            display: none;
-        }
-
-        [data-theme="light"] .logo-light {
             display: block;
+        }
+
+        [data-theme="dark"] .logo-dark {
+            display: block;
+        }
+
+        [data-theme="dark"] .logo-light {
+            display: none;
         }
 
         .theme-switch {
@@ -131,19 +131,19 @@
         }
 
         .sun-icon {
-            display: block;
+            display: none;
         }
 
         .moon-icon {
-            display: none;
-        }
-
-        [data-theme="light"] .sun-icon {
-            display: none;
-        }
-
-        [data-theme="light"] .moon-icon {
             display: block;
+        }
+
+        [data-theme="dark"] .sun-icon {
+            display: block;
+        }
+
+        [data-theme="dark"] .moon-icon {
+            display: none;
         }
 
         .brand-divider {
@@ -503,14 +503,14 @@
                     <svg class="moon-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <span id="themeText">LIGHT</span>
+                    <span id="themeText">DARK</span>
                 </button>
                 <div class="lang-switch">
                     <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
                     <span class="lang-divider">/</span>
                     <button class="lang-btn" id="btn-lang-vi" onclick="setLanguage('vi')">VI</button>
                 </div>
-                <div class="header-tag" id="i18n-headerTag">Official APT Mirror</div>
+                <div class="header-tag" id="i18n-headerTag">Official APT & DNF Mirror</div>
             </div>
         </header>
 
@@ -687,7 +687,7 @@
         };
 
         let currentLang = localStorage.getItem('repophp_lang') || 'en';
-        let currentTheme = localStorage.getItem('repophp_theme') || 'dark';
+        let currentTheme = localStorage.getItem('repophp_theme') || 'light';
         let currentDistro = localStorage.getItem('repophp_distro') || 'apt';
 
         function setDistro(distro) {
@@ -716,8 +716,8 @@
         function setTheme(theme) {
             currentTheme = theme;
             localStorage.setItem('repophp_theme', theme);
-            if (theme === 'light') {
-                document.documentElement.setAttribute('data-theme', 'light');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
             } else {
                 document.documentElement.removeAttribute('data-theme');
             }
@@ -725,14 +725,14 @@
         }
 
         function toggleTheme() {
-            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
         }
 
         function updateThemeUI() {
             const t = translations[currentLang] || translations.en;
             const textEl = document.getElementById('themeText');
             if (textEl) {
-                textEl.innerText = currentTheme === 'dark' ? t.themeLight : t.themeDark;
+                textEl.innerText = currentTheme === 'light' ? t.themeDark : t.themeLight;
             }
         }
 
