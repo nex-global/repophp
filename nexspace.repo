@@ -1,0 +1,8 @@
+[nexspace-runtimes]
+name=NexSpace Official PHP & SAPI Repository - Enterprise Linux 9 ($basearch)
+baseurl=https://repophp.nexspace.dev/rpm/el9/$basearch
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+metadata_expire=300
+type=rpm
