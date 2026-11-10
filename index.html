@@ -26,6 +26,22 @@
             --radius-lg: 8px;
         }
 
+        [data-theme="light"] {
+            --bg: #ffffff;
+            --bg-card: #f9f9fb;
+            --bg-card-hover: #f1f1f4;
+            --bg-input: #f4f4f6;
+            --bg-code: #f4f4f6;
+            --border-subtle: #e4e4e7;
+            --border-strong: #d4d4d8;
+            --text-primary: #09090b;
+            --text-secondary: #52525b;
+            --text-muted: #71717a;
+            --btn-bg: #09090b;
+            --btn-text: #ffffff;
+            --btn-hover: #27272a;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -70,6 +86,63 @@
         .brand-logo {
             height: 22px;
             width: auto;
+            display: block;
+        }
+
+        .logo-dark {
+            display: block;
+        }
+
+        .logo-light {
+            display: none;
+        }
+
+        [data-theme="light"] .logo-dark {
+            display: none;
+        }
+
+        [data-theme="light"] .logo-light {
+            display: block;
+        }
+
+        .theme-switch {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: 'Nex Mono', monospace;
+            font-size: 0.75rem;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 0.25rem 0.55rem;
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .theme-switch:hover {
+            color: var(--text-primary);
+            border-color: var(--border-strong);
+            background: var(--bg-card-hover);
+        }
+
+        .theme-switch svg {
+            display: block;
+        }
+
+        .sun-icon {
+            display: block;
+        }
+
+        .moon-icon {
+            display: none;
+        }
+
+        [data-theme="light"] .sun-icon {
+            display: none;
+        }
+
+        [data-theme="light"] .moon-icon {
             display: block;
         }
 
@@ -372,18 +445,36 @@
 <body>
     <div class="container">
         <header>
-            <div class="brand">
-                <img src="./logo-light.svg" alt="NEX" class="brand-logo" height="22">
+            <a href="/" class="brand">
+                <img src="./logo-light.svg" alt="NEX" class="brand-logo logo-dark" height="22">
+                <img src="./logo-drank.svg" alt="NEX" class="brand-logo logo-light" height="22">
                 <span class="brand-divider">/</span>
                 <span class="brand-sub">repophp</span>
-            </div>
+            </a>
             <div class="header-actions">
-                <div class="header-tag" id="i18n-headerTag">Official APT Mirror</div>
+                <button class="theme-switch" id="themeToggle" onclick="toggleTheme()" title="Switch Theme" aria-label="Toggle Theme">
+                    <svg class="sun-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <span id="themeText">LIGHT</span>
+                </button>
                 <div class="lang-switch">
                     <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
                     <span class="lang-divider">/</span>
                     <button class="lang-btn" id="btn-lang-vi" onclick="setLanguage('vi')">VI</button>
                 </div>
+                <div class="header-tag" id="i18n-headerTag">Official APT Mirror</div>
             </div>
         </header>
 
@@ -523,7 +614,9 @@
                 footerText: "NexSpace Unified Server Ecosystem. Pure Rust Infrastructure.",
                 copyText: "COPY",
                 copiedText: "COPIED",
-                copiedClipboard: "COPIED TO CLIPBOARD"
+                copiedClipboard: "COPIED TO CLIPBOARD",
+                themeLight: "LIGHT",
+                themeDark: "DARK"
             },
             vi: {
                 headerTag: "Kho lưu trữ APT chính thức",
@@ -548,11 +641,37 @@
                 footerText: "Hệ sinh thái máy chủ thống nhất NexSpace. Hạ tầng 100% Rust.",
                 copyText: "SAO CHÉP",
                 copiedText: "ĐÃ CHÉP",
-                copiedClipboard: "ĐÃ SAO CHÉP LỆNH"
+                copiedClipboard: "ĐÃ SAO CHÉP LỆNH",
+                themeLight: "SÁNG",
+                themeDark: "TỐI"
             }
         };
 
         let currentLang = localStorage.getItem('repophp_lang') || 'en';
+        let currentTheme = localStorage.getItem('repophp_theme') || 'dark';
+
+        function setTheme(theme) {
+            currentTheme = theme;
+            localStorage.setItem('repophp_theme', theme);
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+            updateThemeUI();
+        }
+
+        function toggleTheme() {
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        }
+
+        function updateThemeUI() {
+            const t = translations[currentLang] || translations.en;
+            const textEl = document.getElementById('themeText');
+            if (textEl) {
+                textEl.innerText = currentTheme === 'dark' ? t.themeLight : t.themeDark;
+            }
+        }
 
         function setLanguage(lang) {
             currentLang = lang;
@@ -575,6 +694,7 @@
 
             document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
             document.getElementById('btn-lang-vi').classList.toggle('active', lang === 'vi');
+            updateThemeUI();
         }
 
         function copyText(elementId, btn) {
@@ -600,7 +720,8 @@
             });
         }
 
-        // Initialize language
+        // Initialize theme & language
+        setTheme(currentTheme);
         setLanguage(currentLang);
     </script>
 </body>
