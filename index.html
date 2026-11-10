@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,6 +88,12 @@
             text-transform: uppercase;
         }
 
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
         .header-tag {
             font-family: 'Nex Mono', monospace;
             font-size: 0.75rem;
@@ -98,6 +104,44 @@
             background: var(--bg-card);
             text-transform: uppercase;
             letter-spacing: 0.05em;
+        }
+
+        .lang-switch {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-family: 'Nex Mono', monospace;
+            font-size: 0.75rem;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 0.2rem 0.5rem;
+            background: var(--bg-card);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-family: 'Nex Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.1rem 0.25rem;
+            transition: color 0.15s ease;
+        }
+
+        .lang-btn:hover {
+            color: var(--text-secondary);
+        }
+
+        .lang-btn.active {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .lang-divider {
+            color: var(--border-strong);
+            font-size: 0.7rem;
         }
 
         .hero {
@@ -320,6 +364,7 @@
             h1 { font-size: 1.75rem; }
             .meta-grid { grid-template-columns: 1fr; }
             header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .header-actions { width: 100%; justify-content: space-between; }
             footer { flex-direction: column; gap: 0.75rem; align-items: flex-start; }
         }
     </style>
@@ -332,39 +377,46 @@
                 <span class="brand-divider">/</span>
                 <span class="brand-sub">repophp</span>
             </div>
-            <div class="header-tag">Official APT Mirror</div>
+            <div class="header-actions">
+                <div class="header-tag" id="i18n-headerTag">Official APT Mirror</div>
+                <div class="lang-switch">
+                    <button class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+                    <span class="lang-divider">/</span>
+                    <button class="lang-btn" id="btn-lang-vi" onclick="setLanguage('vi')">VI</button>
+                </div>
+            </div>
         </header>
 
         <section class="hero">
-            <div class="hero-badge">REPOPHP.NEXSPACE.DEV</div>
-            <h1>Native PHP Runtimes Repository</h1>
-            <p class="description">Kho lưu trữ APT chính thức cung cấp các phiên bản PHP độc lập, tích hợp sâu kiến trúc NexSAPI và tương thích tuyệt đối với phân vùng cô lập người dùng NexRealm.</p>
+            <div class="hero-badge" id="i18n-heroBadge">REPOPHP.NEXSPACE.DEV</div>
+            <h1 id="i18n-heroTitle">Native PHP Runtimes Repository</h1>
+            <p class="description" id="i18n-heroDesc">Official APT repository providing standalone native PHP runtimes. Built with zero-copy SAPI architecture and fully isolated within NexRealm user sandboxes.</p>
         </section>
 
         <div class="card">
             <div class="card-header">
-                <span class="card-title">Thiết lập nguồn APT (1-Click Setup)</span>
+                <span class="card-title" id="i18n-setupTitle">1-Click APT Setup (Ubuntu / Debian)</span>
             </div>
             <div class="code-box">
                 <code id="setup-cmd">curl -fsSL https://repophp.nexspace.dev/setup.sh | sudo bash</code>
-                <button class="copy-btn" onclick="copyText('setup-cmd', this)">COPY</button>
+                <button class="copy-btn" id="copy-btn-main" onclick="copyText('setup-cmd', this)">COPY</button>
             </div>
         </div>
 
         <div class="card">
             <div class="card-header">
-                <span class="card-title">Danh mục gói runtime sẵn sàng</span>
+                <span class="card-title" id="i18n-packagesTitle">Available Runtime Packages</span>
                 <span class="header-tag">6 Versions</span>
             </div>
             <div class="table-wrap">
                 <table>
                     <thead>
                         <tr>
-                            <th>Tên gói</th>
-                            <th>Phiên bản</th>
-                            <th>Kiến trúc</th>
-                            <th>Động cơ</th>
-                            <th>Lệnh cài đặt</th>
+                            <th id="i18n-thPackage">Package</th>
+                            <th id="i18n-thVersion">Version</th>
+                            <th id="i18n-thArch">Arch</th>
+                            <th id="i18n-thEngine">Engine</th>
+                            <th id="i18n-thInstall">Install Command</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -372,42 +424,42 @@
                             <td class="pkg-tag">nexphp84</td>
                             <td>8.4.27</td>
                             <td><span class="badge-arch">amd64</span> <span class="badge-arch">arm64</span></td>
-                            <td>NexSAPI / FastCGI</td>
+                            <td class="engine-cell">NexSAPI / FastCGI</td>
                             <td><code class="cmd-snippet" onclick="copySnippet('sudo apt install -y nexphp84', this)">apt install nexphp84</code></td>
                         </tr>
                         <tr>
                             <td class="pkg-tag">nexphp83</td>
                             <td>8.3.6</td>
                             <td><span class="badge-arch">amd64</span> <span class="badge-arch">arm64</span></td>
-                            <td>NexSAPI / FastCGI</td>
+                            <td class="engine-cell">NexSAPI / FastCGI</td>
                             <td><code class="cmd-snippet" onclick="copySnippet('sudo apt install -y nexphp83', this)">apt install nexphp83</code></td>
                         </tr>
                         <tr>
                             <td class="pkg-tag">nexphp82</td>
                             <td>8.2.35</td>
                             <td><span class="badge-arch">amd64</span> <span class="badge-arch">arm64</span></td>
-                            <td>NexSAPI / FastCGI</td>
+                            <td class="engine-cell">NexSAPI / FastCGI</td>
                             <td><code class="cmd-snippet" onclick="copySnippet('sudo apt install -y nexphp82', this)">apt install nexphp82</code></td>
                         </tr>
                         <tr>
                             <td class="pkg-tag">nexphp81</td>
                             <td>8.1.34 / 8.1.31</td>
                             <td><span class="badge-arch">amd64</span> <span class="badge-arch">arm64</span></td>
-                            <td>NexSAPI / FastCGI</td>
+                            <td class="engine-cell">NexSAPI / FastCGI</td>
                             <td><code class="cmd-snippet" onclick="copySnippet('sudo apt install -y nexphp81', this)">apt install nexphp81</code></td>
                         </tr>
                         <tr>
                             <td class="pkg-tag">nexphp80</td>
                             <td>8.0.30</td>
                             <td><span class="badge-arch">amd64</span> <span class="badge-arch">arm64</span></td>
-                            <td>NexSAPI / FastCGI</td>
+                            <td class="engine-cell">NexSAPI / FastCGI</td>
                             <td><code class="cmd-snippet" onclick="copySnippet('sudo apt install -y nexphp80', this)">apt install nexphp80</code></td>
                         </tr>
                         <tr>
                             <td class="pkg-tag">nexphp74</td>
                             <td>7.4.33</td>
                             <td><span class="badge-arch">amd64</span> <span class="badge-arch">arm64</span></td>
-                            <td>NexSAPI / FastCGI</td>
+                            <td class="engine-cell">NexSAPI / FastCGI</td>
                             <td><code class="cmd-snippet" onclick="copySnippet('sudo apt install -y nexphp74', this)">apt install nexphp74</code></td>
                         </tr>
                     </tbody>
@@ -417,56 +469,139 @@
 
         <div class="card">
             <div class="card-header">
-                <span class="card-title">Cấu hình & Tích hợp NexRealm Sandbox</span>
+                <span class="card-title" id="i18n-realmTitle">NexRealm Sandbox Configuration</span>
             </div>
-            <p class="description" style="margin-bottom: 1rem;">Sau khi cài đặt gói runtime, khởi tạo phân vùng cô lập người dùng và xuất cấu hình pool riêng biệt:</p>
+            <p class="description" id="i18n-realmDesc" style="margin-bottom: 1rem;">After package installation, initialize tenant sandbox boundaries and export per-tenant NexPHP worker pool:</p>
             <div class="code-box">
                 <code id="nxr-cmd">sudo nxr nexphp-config alice --php-version 8.4 --output-dir /etc/nexspace/nexphp/pool.d</code>
-                <button class="copy-btn" onclick="copyText('nxr-cmd', this)">COPY</button>
+                <button class="copy-btn" id="copy-btn-realm" onclick="copyText('nxr-cmd', this)">COPY</button>
             </div>
             <div class="meta-grid">
                 <div class="meta-item">
-                    <div class="meta-label">Cô lập tiến trình</div>
-                    <div class="meta-val">PID & Mount Namespaces</div>
+                    <div class="meta-label" id="i18n-metaPidLabel">Process Isolation</div>
+                    <div class="meta-val" id="i18n-metaPidVal">PID & Mount Namespaces</div>
                 </div>
                 <div class="meta-item">
-                    <div class="meta-label">Bảo vệ mạng</div>
-                    <div class="meta-val">NetGuard Anti-SSRF</div>
+                    <div class="meta-label" id="i18n-metaNetLabel">Network Shield</div>
+                    <div class="meta-val" id="i18n-metaNetVal">NetGuard Anti-SSRF</div>
                 </div>
                 <div class="meta-item">
-                    <div class="meta-label">Kiểm soát tài nguyên</div>
-                    <div class="meta-val">Cgroups v2 Limits</div>
+                    <div class="meta-label" id="i18n-metaCgroupsLabel">Resource Governance</div>
+                    <div class="meta-val" id="i18n-metaCgroupsVal">Cgroups v2 Limits</div>
                 </div>
             </div>
         </div>
 
         <footer>
-            <div>NexSpace Unified Server Ecosystem. Pure Rust Infrastructure.</div>
+            <div id="i18n-footerText">NexSpace Unified Server Ecosystem. Pure Rust Infrastructure.</div>
             <div><a href="https://repophp.nexspace.dev/setup.sh">setup.sh</a> &bull; <a href="https://github.com/nex-global/repophp">GitHub Mirror</a></div>
         </footer>
     </div>
 
     <script>
+        const translations = {
+            en: {
+                headerTag: "Official APT Mirror",
+                heroBadge: "REPOPHP.NEXSPACE.DEV",
+                heroTitle: "Native PHP Runtimes Repository",
+                heroDesc: "Official APT repository providing standalone native PHP runtimes. Built with zero-copy SAPI architecture and fully isolated within NexRealm user sandboxes.",
+                setupTitle: "1-Click APT Setup (Ubuntu / Debian)",
+                packagesTitle: "Available Runtime Packages",
+                thPackage: "Package",
+                thVersion: "Version",
+                thArch: "Arch",
+                thEngine: "Engine",
+                thInstall: "Install Command",
+                realmTitle: "NexRealm Sandbox Configuration",
+                realmDesc: "After package installation, initialize tenant sandbox boundaries and export per-tenant NexPHP worker pool:",
+                metaPidLabel: "Process Isolation",
+                metaPidVal: "PID & Mount Namespaces",
+                metaNetLabel: "Network Shield",
+                metaNetVal: "NetGuard Anti-SSRF",
+                metaCgroupsLabel: "Resource Governance",
+                metaCgroupsVal: "Cgroups v2 Limits",
+                footerText: "NexSpace Unified Server Ecosystem. Pure Rust Infrastructure.",
+                copyText: "COPY",
+                copiedText: "COPIED",
+                copiedClipboard: "COPIED TO CLIPBOARD"
+            },
+            vi: {
+                headerTag: "Kho lưu trữ APT chính thức",
+                heroBadge: "REPOPHP.NEXSPACE.DEV",
+                heroTitle: "Kho Lưu Trữ Native PHP Runtimes",
+                heroDesc: "Kho lưu trữ APT chính thức cung cấp các phiên bản PHP độc lập hiệu năng cao, tích hợp sâu kiến trúc động cơ NexSAPI và tương thích tuyệt đối với phân vùng cô lập người dùng NexRealm.",
+                setupTitle: "Thiết lập nguồn APT (1-Click Setup)",
+                packagesTitle: "Danh mục gói runtime sẵn sàng",
+                thPackage: "Tên gói",
+                thVersion: "Phiên bản",
+                thArch: "Kiến trúc",
+                thEngine: "Động cơ",
+                thInstall: "Lệnh cài đặt",
+                realmTitle: "Cấu hình & Tích hợp NexRealm Sandbox",
+                realmDesc: "Sau khi cài đặt gói runtime, khởi tạo phân vùng cô lập người dùng và xuất cấu hình pool riêng biệt:",
+                metaPidLabel: "Cô lập tiến trình",
+                metaPidVal: "PID & Mount Namespaces",
+                metaNetLabel: "Bảo vệ mạng",
+                metaNetVal: "NetGuard Anti-SSRF",
+                metaCgroupsLabel: "Kiểm soát tài nguyên",
+                metaCgroupsVal: "Cgroups v2 Limits",
+                footerText: "Hệ sinh thái máy chủ thống nhất NexSpace. Hạ tầng 100% Rust.",
+                copyText: "SAO CHÉP",
+                copiedText: "ĐÃ CHÉP",
+                copiedClipboard: "ĐÃ SAO CHÉP LỆNH"
+            }
+        };
+
+        let currentLang = localStorage.getItem('repophp_lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('repophp_lang', lang);
+            document.documentElement.setAttribute('lang', lang);
+
+            const t = translations[lang] || translations.en;
+            for (const key in t) {
+                const el = document.getElementById('i18n-' + key);
+                if (el) {
+                    el.innerText = t[key];
+                }
+            }
+
+            document.querySelectorAll('.copy-btn').forEach(btn => {
+                if (btn.innerText !== 'COPIED' && btn.innerText !== 'ĐÃ CHÉP') {
+                    btn.innerText = t.copyText;
+                }
+            });
+
+            document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-lang-vi').classList.toggle('active', lang === 'vi');
+        }
+
         function copyText(elementId, btn) {
             const text = document.getElementById(elementId).innerText;
+            const t = translations[currentLang] || translations.en;
             navigator.clipboard.writeText(text).then(() => {
                 const originalText = btn.innerText;
-                btn.innerText = 'COPIED';
+                btn.innerText = t.copiedText;
                 setTimeout(() => {
-                    btn.innerText = originalText;
+                    btn.innerText = t.copyText;
                 }, 2000);
             });
         }
 
         function copySnippet(text, el) {
+            const t = translations[currentLang] || translations.en;
             navigator.clipboard.writeText(text).then(() => {
                 const orig = el.innerText;
-                el.innerText = 'COPIED TO CLIPBOARD';
+                el.innerText = t.copiedClipboard;
                 setTimeout(() => {
                     el.innerText = orig;
                 }, 1500);
             });
         }
+
+        // Initialize language
+        setLanguage(currentLang);
     </script>
 </body>
 </html>
