@@ -1,22 +1,3 @@
-Package: nexphp74
-Version: 7.4.33-1nex1
-Section: web
-Priority: optional
-Architecture: arm64
-Installed-Size: 4756
-Maintainer: NexSpace Engineering Team <core@nexspace.dev>
-Depends: libc6 (>= 2.34), libssl3, zlib1g
-Recommends: nexengine
-Homepage: https://nexspace.dev
-Description: NexPHP Native SAPI High-Performance Runtime for PHP 7.4
- Ultra-high performance PHP 7.4 execution runtime powered by NexEngine
- Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
- Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
-Filename: pool/main/n/nexphp74/nexphp74_7.4.33-1nex1_arm64.deb
-Size: 1486464
-MD5sum: eafac81daceb608c7c8d2df58eab041e
-SHA256: b01997ec6e49acf0f181e0f9106508e157c1e39bd0fa7cf3d99d3a6f80c32877
-
 Package: nexphp82
 Version: 8.2.35-1nex1
 Section: web
@@ -32,47 +13,28 @@ Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.2
  Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
  Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
 Filename: pool/main/n/nexphp82/nexphp82_8.2.35-1nex1_arm64.deb
-Size: 1796010
-MD5sum: 4dc59946032fb5bb3c458192551b65fb
-SHA256: dbdf21de5b0683c8fb83bc58ef629c8be9c12dd0e851facdbf82049822f48754
+Size: 1816260
+MD5sum: d93c6e38d7359f1d617a3a5f55ed8f84
+SHA256: ae4362095d8f00358bf0f39a9a2f628fe066998e745e874187ce860f4381bc37
 
-Package: nexphp81
-Version: 8.1.34-1nex1
+Package: nexphp74
+Version: 7.4.33-1nex1
 Section: web
 Priority: optional
 Architecture: arm64
-Installed-Size: 5524
+Installed-Size: 4756
 Maintainer: NexSpace Engineering Team <core@nexspace.dev>
 Depends: libc6 (>= 2.34), libssl3, zlib1g
 Recommends: nexengine
 Homepage: https://nexspace.dev
-Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.1
- Ultra-high performance PHP 8.1 execution runtime powered by NexEngine
+Description: NexPHP Native SAPI High-Performance Runtime for PHP 7.4
+ Ultra-high performance PHP 7.4 execution runtime powered by NexEngine
  Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
  Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
-Filename: pool/main/n/nexphp81/nexphp81_8.1.34-1nex1_arm64.deb
-Size: 1734134
-MD5sum: 8d17931b598fb054abc52f4e9c5aa347
-SHA256: fdbd2c69a8bc022b0f3576be2192905b51a6f295587bf731fbe9b680469f4724
-
-Package: nexphp84
-Version: 8.4.27-1nex1
-Section: web
-Priority: optional
-Architecture: arm64
-Installed-Size: 5968
-Maintainer: NexSpace Engineering Team <core@nexspace.dev>
-Depends: libc6 (>= 2.34), libssl3, zlib1g
-Recommends: nexengine
-Homepage: https://nexspace.dev
-Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.4
- Ultra-high performance PHP 8.4 execution runtime powered by NexEngine
- Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
- Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
-Filename: pool/main/n/nexphp84/nexphp84_8.4.27-1nex1_arm64.deb
-Size: 1921016
-MD5sum: fc42baf07e8d53a30c5da52603a92877
-SHA256: d115f5d4fc2c3d62e0f56bb89373eceb24fbfc8b46b006e3c3e9ba9a3ffbbd85
+Filename: pool/main/n/nexphp74/nexphp74_7.4.33-1nex1_arm64.deb
+Size: 1486444
+MD5sum: 0582bdac5fe7bff412841194b380a207
+SHA256: 79f1767c7639d1c4690288b5f56ddb024ab930e49d3dfa6d96fe3e63b130ce71
 
 Package: nexphp80
 Version: 8.0.30-1nex1
@@ -89,9 +51,9 @@ Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.0
  Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
  Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
 Filename: pool/main/n/nexphp80/nexphp80_8.0.30-1nex1_arm64.deb
-Size: 1530398
-MD5sum: 629ddcb8f3485c7283f1174aed65f13d
-SHA256: 3fd44ce0bc6857c01e0549bac36711049b87f7fb731022dd86dfd6bdb247f6cc
+Size: 1530526
+MD5sum: 82d5dd4cff861d102604fcea4423527c
+SHA256: 797bfc9d8c4b73ebf65411e71a06081e1d60467745dd4fc2f54d9b10ebeb9b82
 
 Package: nexphp83
 Version: 8.3.36-1nex1
@@ -108,7 +70,45 @@ Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.3
  Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
  Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
 Filename: pool/main/n/nexphp83/nexphp83_8.3.36-1nex1_arm64.deb
-Size: 1828826
-MD5sum: d841ce7d2f977b51e086b43cecd51a43
-SHA256: 6c9987e0a390d67e0b42520fdedfbeb824ee34b5a3291a5aa9d93efeaa1b2519
+Size: 1828806
+MD5sum: 32af41a93adb8489a20b66152ecd9b67
+SHA256: 620e622c7506658d7387d4e79450fbf41382d2cf5f627c697bcd28087ba4a57f
+
+Package: nexphp84
+Version: 8.4.27-1nex1
+Section: web
+Priority: optional
+Architecture: arm64
+Installed-Size: 5968
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: libc6 (>= 2.34), libssl3, zlib1g
+Recommends: nexengine
+Homepage: https://nexspace.dev
+Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.4
+ Ultra-high performance PHP 8.4 execution runtime powered by NexEngine
+ Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
+ Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
+Filename: pool/main/n/nexphp84/nexphp84_8.4.27-1nex1_arm64.deb
+Size: 1921028
+MD5sum: df8b63325d509a875761e31a0841d9f6
+SHA256: e95ff3f6473f7e3e284871e8ffc3352fbe32ac9cadc3bd53946a3997db2ceae9
+
+Package: nexphp81
+Version: 8.1.34-1nex1
+Section: web
+Priority: optional
+Architecture: arm64
+Installed-Size: 5524
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: libc6 (>= 2.34), libssl3, zlib1g
+Recommends: nexengine
+Homepage: https://nexspace.dev
+Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.1
+ Ultra-high performance PHP 8.1 execution runtime powered by NexEngine
+ Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
+ Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
+Filename: pool/main/n/nexphp81/nexphp81_8.1.34-1nex1_arm64.deb
+Size: 1734590
+MD5sum: 543743ba230a99fa793be17f7823e028
+SHA256: 96c95005c46823dd0b120f0007023810a339f20c01e735d0cbfd889b251b146f
 
