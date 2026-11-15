@@ -9,12 +9,12 @@ set -euo pipefail
 REPO_URL="https://repophp.nexspace.dev"
 
 if [ "$(id -u)" -ne 0 ]; then
-    echo "[ERROR] Vui lòng chạy lệnh với quyền root hoặc sudo: curl -fsSL ${REPO_URL}/setup.sh | sudo bash"
+    echo "[ERROR] Please run this command as root or with sudo: curl -fsSL ${REPO_URL}/setup.sh | sudo bash"
     exit 1
 fi
 
 echo "============================================================"
-echo "[INFO] Đang thiết lập kho phần mềm chính thức NexSpace..."
+echo "[INFO] Setting up official NexSpace repository..."
 echo "============================================================"
 
 OS_ID="unknown"
@@ -25,10 +25,10 @@ if [ -f /etc/os-release ]; then
     OS_LIKE="${ID_LIKE:-}"
 fi
 
-# 1. Nhánh Enterprise Linux: AlmaLinux, Rocky Linux, RHEL, CentOS
+# 1. Enterprise Linux branch: AlmaLinux, Rocky Linux, RHEL, CentOS
 if [[ "${OS_ID}" =~ ^(almalinux|rocky|rhel|centos|fedora)$ ]] || [[ "${OS_LIKE}" =~ (rhel|fedora|centos) ]]; then
-    echo "[INFO] Phát hiện hệ điều hành Enterprise Linux: ${PRETTY_NAME:-$OS_ID}"
-    echo "[INFO] Đang cấu hình kho DNF/YUM (/etc/yum.repos.d/nexspace.repo)..."
+    echo "[INFO] Detected Enterprise Linux OS: ${PRETTY_NAME:-$OS_ID}"
+    echo "[INFO] Configuring DNF/YUM repository (/etc/yum.repos.d/nexspace.repo)..."
 
     cat << REPO_EOF > /etc/yum.repos.d/nexspace.repo
 [nexspace-runtimes]
@@ -40,8 +40,8 @@ repo_gpgcheck=0
 metadata_expire=300
 REPO_EOF
 
-    echo "  [OK] Đã tạo file nguồn: /etc/yum.repos.d/nexspace.repo"
-    echo "  [OK] Đang cập nhật chỉ mục DNF/YUM..."
+    echo "  [OK] Created repository file: /etc/yum.repos.d/nexspace.repo"
+    echo "  [OK] Updating DNF/YUM metadata cache..."
     if command -v dnf >/dev/null 2>&1; then
         dnf makecache --disablerepo="*" --enablerepo="nexspace-runtimes" -q 2>/dev/null || dnf clean all -q && dnf makecache -q
     elif command -v yum >/dev/null 2>&1; then
@@ -49,21 +49,21 @@ REPO_EOF
     fi
 
     echo "============================================================"
-    echo "[SUCCESS] Thiết lập kho NexSpace hoàn tất!"
-    echo "Bạn có thể cài đặt các runtime ngay bây giờ:"
+    echo "[SUCCESS] NexSpace repository setup complete!"
+    echo "You can now install runtimes:"
     echo "   sudo dnf install -y nexphp84"
     echo "   sudo dnf install -y nexphp83"
     echo "   sudo dnf install -y nexphp82"
     echo "============================================================"
 
-# 2. Nhánh Debian / Ubuntu: Ubuntu, Debian (APT)
+# 2. Debian / Ubuntu branch: Ubuntu, Debian (APT)
 else
     KEYRING_DIR="/etc/apt/keyrings"
     SOURCES_DIR="/etc/apt/sources.list.d"
     CODENAME="${VERSION_CODENAME:-noble}"
 
-    echo "[INFO] Phát hiện hệ điều hành Debian/Ubuntu: ${PRETTY_NAME:-$CODENAME}"
-    echo "[INFO] Đang cấu hình kho APT (${SOURCES_DIR}/nexspace.list)..."
+    echo "[INFO] Detected Debian/Ubuntu OS: ${PRETTY_NAME:-$CODENAME}"
+    echo "[INFO] Configuring APT repository (${SOURCES_DIR}/nexspace.list)..."
 
     mkdir -p "${KEYRING_DIR}" "${SOURCES_DIR}"
 
@@ -73,13 +73,13 @@ else
         echo "deb [trusted=yes] ${REPO_URL} ${CODENAME} main" > "${SOURCES_DIR}/nexspace.list"
     fi
 
-    echo "  [OK] Đã tạo file nguồn: ${SOURCES_DIR}/nexspace.list"
-    echo "  [OK] Đang cập nhật chỉ mục APT..."
+    echo "  [OK] Created source file: ${SOURCES_DIR}/nexspace.list"
+    echo "  [OK] Updating APT package index..."
     apt-get update -o Dir::Etc::sourcelist="sources.list.d/nexspace.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0" -qq
 
     echo "============================================================"
-    echo "[SUCCESS] Thiết lập kho NexSpace hoàn tất!"
-    echo "Bạn có thể cài đặt các runtime ngay bây giờ:"
+    echo "[SUCCESS] NexSpace repository setup complete!"
+    echo "You can now install runtimes:"
     echo "   sudo apt install -y nexphp84"
     echo "   sudo apt install -y nexphp83"
     echo "   sudo apt install -y nexphp82"
