@@ -552,44 +552,44 @@
                     <tbody>
                         <tr>
                             <td class="pkg-tag">nexphp84</td>
-                            <td>8.4.27</td>
-                            <td><span class="badge-arch">amd64 / x86_64</span> <span class="badge-arch">arm64 / aarch64</span></td>
-                            <td class="engine-cell">NexSAPI / FastCGI</td>
-                            <td><code class="cmd-snippet" id="pkg-cmd-84" onclick="copySnippet('sudo apt install -y nexphp84', this)">apt install nexphp84</code></td>
+                            <td>8.4.28</td>
+                            <td><span class="badge-arch">amd64 / x86_64</span></td>
+                            <td class="engine-cell">NexSAPI PGO (Modular + -all)</td>
+                            <td><code class="cmd-snippet" id="pkg-cmd-84" onclick="copySnippet('sudo apt install -y nexphp84-all', this)">apt install nexphp84-all</code></td>
                         </tr>
                         <tr>
                             <td class="pkg-tag">nexphp83</td>
-                            <td>8.3.6</td>
-                            <td><span class="badge-arch">amd64 / x86_64</span> <span class="badge-arch">arm64 / aarch64</span></td>
-                            <td class="engine-cell">NexSAPI / FastCGI</td>
-                            <td><code class="cmd-snippet" id="pkg-cmd-83" onclick="copySnippet('sudo apt install -y nexphp83', this)">apt install nexphp83</code></td>
+                            <td>8.3.37</td>
+                            <td><span class="badge-arch">amd64 / x86_64</span></td>
+                            <td class="engine-cell">NexSAPI PGO (Modular + -all)</td>
+                            <td><code class="cmd-snippet" id="pkg-cmd-83" onclick="copySnippet('sudo apt install -y nexphp83-all', this)">apt install nexphp83-all</code></td>
                         </tr>
                         <tr>
                             <td class="pkg-tag">nexphp82</td>
-                            <td>8.2.35</td>
-                            <td><span class="badge-arch">amd64 / x86_64</span> <span class="badge-arch">arm64 / aarch64</span></td>
-                            <td class="engine-cell">NexSAPI / FastCGI</td>
-                            <td><code class="cmd-snippet" id="pkg-cmd-82" onclick="copySnippet('sudo apt install -y nexphp82', this)">apt install nexphp82</code></td>
+                            <td>8.2.36</td>
+                            <td><span class="badge-arch">amd64 / x86_64</span></td>
+                            <td class="engine-cell">NexSAPI PGO (Modular + -all)</td>
+                            <td><code class="cmd-snippet" id="pkg-cmd-82" onclick="copySnippet('sudo apt install -y nexphp82-all', this)">apt install nexphp82-all</code></td>
                         </tr>
                         <tr>
                             <td class="pkg-tag">nexphp81</td>
-                            <td>8.1.34 / 8.1.31</td>
-                            <td><span class="badge-arch">amd64 / x86_64</span> <span class="badge-arch">arm64 / aarch64</span></td>
-                            <td class="engine-cell">NexSAPI / FastCGI</td>
-                            <td><code class="cmd-snippet" id="pkg-cmd-81" onclick="copySnippet('sudo apt install -y nexphp81', this)">apt install nexphp81</code></td>
+                            <td>8.1.34</td>
+                            <td><span class="badge-arch">amd64 / x86_64</span></td>
+                            <td class="engine-cell">NexSAPI PGO (Modular + -all)</td>
+                            <td><code class="cmd-snippet" id="pkg-cmd-81" onclick="copySnippet('sudo apt install -y nexphp81-all', this)">apt install nexphp81-all</code></td>
                         </tr>
                         <tr>
                             <td class="pkg-tag">nexphp80</td>
                             <td>8.0.30</td>
-                            <td><span class="badge-arch">amd64 / x86_64</span> <span class="badge-arch">arm64 / aarch64</span></td>
-                            <td class="engine-cell">NexSAPI / FastCGI</td>
+                            <td><span class="badge-arch">amd64 / x86_64</span></td>
+                            <td class="engine-cell">NexSAPI / FastCGI (OpenSSL 3)</td>
                             <td><code class="cmd-snippet" id="pkg-cmd-80" onclick="copySnippet('sudo apt install -y nexphp80', this)">apt install nexphp80</code></td>
                         </tr>
                         <tr>
                             <td class="pkg-tag">nexphp74</td>
                             <td>7.4.33</td>
-                            <td><span class="badge-arch">amd64 / x86_64</span> <span class="badge-arch">arm64 / aarch64</span></td>
-                            <td class="engine-cell">NexSAPI / FastCGI</td>
+                            <td><span class="badge-arch">amd64 / x86_64</span></td>
+                            <td class="engine-cell">NexSAPI / FastCGI (OpenSSL 3)</td>
                             <td><code class="cmd-snippet" id="pkg-cmd-74" onclick="copySnippet('sudo apt install -y nexphp74', this)">apt install nexphp74</code></td>
                         </tr>
                     </tbody>
@@ -624,7 +624,7 @@
 
         <footer>
             <div id="i18n-footerText">NexSpace Unified Server Ecosystem. Pure Rust Infrastructure.</div>
-            <div><a href="https://repophp.nexspace.dev/setup.sh">setup.sh</a> &bull; <a href="https://github.com/nex-global/repophp">GitHub Mirror</a></div>
+            <div><a href="https://repophp.nexspace.dev/setup.sh">setup.sh</a> &bull; <a href="https://repophp.nexspace.dev/nexspace.gpg">nexspace.gpg</a> &bull; <a href="https://github.com/nex-global/repophp">GitHub Mirror</a></div>
         </footer>
     </div>
 
@@ -701,12 +701,14 @@
                 btnDnf.classList.toggle('active', distro === 'dnf');
             }
 
-            const versions = ['84', '83', '82', '81', '80', '74'];
+                        const versions = ['84', '83', '82', '81', '80', '74'];
+            const modularSet = new Set(['84', '83', '82', '81']);
             versions.forEach(v => {
                 const snippet = document.getElementById('pkg-cmd-' + v);
                 if (snippet) {
-                    const cmd = distro === 'apt' ? `apt install nexphp${v}` : `dnf install nexphp${v}`;
-                    const fullCmd = distro === 'apt' ? `sudo apt install -y nexphp${v}` : `sudo dnf install -y nexphp${v}`;
+                    const target = modularSet.has(v) ? `nexphp${v}-all` : `nexphp${v}`;
+                    const cmd = distro === 'apt' ? `apt install ${target}` : `dnf install ${target}`;
+                    const fullCmd = distro === 'apt' ? `sudo apt install -y ${target}` : `sudo dnf install -y ${target}`;
                     snippet.innerText = cmd;
                     snippet.setAttribute('onclick', `copySnippet('${fullCmd}', this)`);
                 }
