@@ -1,59 +1,117 @@
-Package: nexphp82
-Version: 8.2.35-1nex1
+Package: nexphp82-xml
+Version: 8.2.36-2nex1
 Section: web
 Priority: optional
 Architecture: amd64
-Installed-Size: 5568
+Installed-Size: 472
 Maintainer: NexSpace Engineering Team <core@nexspace.dev>
-Depends: libc6 (>= 2.34), libssl3, zlib1g
-Recommends: nexengine
+Depends: nexphp82 (= 8.2.36-2nex1)
 Homepage: https://nexspace.dev
-Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.2
- Ultra-high performance PHP 8.2 execution runtime powered by NexEngine
- Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
- Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
-Filename: pool/main/n/nexphp82/nexphp82_8.2.35-1nex1_amd64.deb
-Size: 1850934
-MD5sum: 1b0ce7883923951120a6edb35f8f43c6
-SHA256: aab111f15c3ed8a52b703b2382062602c29eac3d1b3a2246660d75ac6c372881
+Description: XML extensions (dom, simplexml, xml) for NexPHP 8.2
+ Modular shared extension package for nexphp82 (8.2).
+Filename: pool/main/n/nexphp82-xml/nexphp82-xml_8.2.36-2nex1_amd64.deb
+Size: 115366
+MD5sum: 338607a4f3068655c12b4f92e2efd8c6
+SHA256: ba6fe548edeebd20bd04f0a0258894719a4f27b5f3f4aba52eaf2c9d2284cdf2
 
-Package: nexphp74
-Version: 7.4.33-1nex1
+Package: nexphp81-common
+Version: 8.1.34-2nex1
 Section: web
 Priority: optional
 Architecture: amd64
-Installed-Size: 4676
+Installed-Size: 7424
 Maintainer: NexSpace Engineering Team <core@nexspace.dev>
-Depends: libc6 (>= 2.34), libssl3, zlib1g
-Recommends: nexengine
+Depends: nexphp81 (= 8.1.34-2nex1)
 Homepage: https://nexspace.dev
-Description: NexPHP Native SAPI High-Performance Runtime for PHP 7.4
- Ultra-high performance PHP 7.4 execution runtime powered by NexEngine
- Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
- Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
-Filename: pool/main/n/nexphp74/nexphp74_7.4.33-1nex1_amd64.deb
-Size: 1531354
-MD5sum: b69ce387e7aad069024cd3e4d31701a4
-SHA256: 1c3d4fae83ccac2567fad86587129ed59d7fc3d1f319382c5bc5a5875a47e71d
+Description: Common extensions (ctype, tokenizer, fileinfo, exif, bcmath, sockets) for NexPHP 8.1
+ Modular shared extension package for nexphp81 (8.1).
+Filename: pool/main/n/nexphp81-common/nexphp81-common_8.1.34-2nex1_amd64.deb
+Size: 401108
+MD5sum: bc2736a237cf247c1b1c822dced0ecb0
+SHA256: e39dc291dc25f506e51d58c5b1d03afd929c63620d2375f97b68f9ccd7da9057
 
-Package: nexphp80
-Version: 8.0.30-1nex1
+Package: nexphp84-xml
+Version: 8.4.28-2nex1
 Section: web
 Priority: optional
 Architecture: amd64
-Installed-Size: 4852
+Installed-Size: 2764
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp84 (= 8.4.28-2nex1)
+Homepage: https://nexspace.dev
+Description: XML extensions (dom, simplexml, xml) for NexPHP 8.4
+ Modular shared extension package for nexphp84 (8.4).
+Filename: pool/main/n/nexphp84-xml/nexphp84-xml_8.4.28-2nex1_amd64.deb
+Size: 722584
+MD5sum: fa509e811f6620d3342e23bdf0dedaa3
+SHA256: f35b187988d0fd2c81a17545e9a4ed959f9950839576e375531e18c66cdf14ac
+
+Package: nexphp84-intl
+Version: 8.4.28-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 856
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp84 (= 8.4.28-2nex1)
+Homepage: https://nexspace.dev
+Description: Internationalization (intl) extension for NexPHP 8.4
+ Modular shared extension package for nexphp84 (8.4).
+Filename: pool/main/n/nexphp84-intl/nexphp84-intl_8.4.28-2nex1_amd64.deb
+Size: 199478
+MD5sum: c08337da193a949dab03c5218140e946
+SHA256: 2a50f73559c6c33ceca1e1f14bb5d2e2106f89ffd5fa59207d7e656126fb8378
+
+Package: nexphp83-sodium
+Version: 8.3.37-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 188
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp83 (= 8.3.37-2nex1)
+Homepage: https://nexspace.dev
+Description: Sodium cryptography extension for NexPHP 8.3
+ Modular shared extension package for nexphp83 (8.3).
+Filename: pool/main/n/nexphp83-sodium/nexphp83-sodium_8.3.37-2nex1_amd64.deb
+Size: 31360
+MD5sum: e28f844d06b73d549d07df6c6221f275
+SHA256: a4156958adb1cb159d3136cb1660b112d5c96eb99cf28d9f5f31c956e16cb0c4
+
+Package: nexphp84-gd
+Version: 8.4.28-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 512
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp84 (= 8.4.28-2nex1)
+Homepage: https://nexspace.dev
+Description: GD image processing extension for NexPHP 8.4
+ Modular shared extension package for nexphp84 (8.4).
+Filename: pool/main/n/nexphp84-gd/nexphp84-gd_8.4.28-2nex1_amd64.deb
+Size: 132974
+MD5sum: 8d09fc2f1993998b39887968528244a8
+SHA256: a5898037e5aa580f2957125f7b60f0fc4fe52d0a2ea08abe0ded9c97c253f78d
+
+Package: nexphp83
+Version: 8.3.37-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 19624
 Maintainer: NexSpace Engineering Team <core@nexspace.dev>
 Depends: libc6 (>= 2.34), libssl3, zlib1g
 Recommends: nexengine
 Homepage: https://nexspace.dev
-Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.0
- Ultra-high performance PHP 8.0 execution runtime powered by NexEngine
+Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.3
+ Ultra-high performance PHP 8.3 execution runtime powered by NexEngine
  Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
  Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
-Filename: pool/main/n/nexphp80/nexphp80_8.0.30-1nex1_amd64.deb
-Size: 1577568
-MD5sum: 911c628fd15444e17bfc741cacb9f1c2
-SHA256: 0ee34919235c3c4b16ad954d1ae01410e286158319b04a7d34493c8f58c62bf4
+Filename: pool/main/n/nexphp83/nexphp83_8.3.37-2nex1_amd64.deb
+Size: 5884988
+MD5sum: 028d0bb3004ccb8412899ae924fc4408
+SHA256: 350fd46e2ca9041aa9f4ffc24723de8aeb760eb88cdae59c11b6f9840a0fdeda
 
 Package: nexphp83
 Version: 8.3.36-1nex1
@@ -74,6 +132,290 @@ Size: 1894552
 MD5sum: 593de9cbbbfd1f97917358ef4ba553f5
 SHA256: 6ebd66c32c5e739119a8a31651dc8053a5dce3ccd76ef113c48ec05ee2733125
 
+Package: nexphp81-sodium
+Version: 8.1.34-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 184
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp81 (= 8.1.34-2nex1)
+Homepage: https://nexspace.dev
+Description: Sodium cryptography extension for NexPHP 8.1
+ Modular shared extension package for nexphp81 (8.1).
+Filename: pool/main/n/nexphp81-sodium/nexphp81-sodium_8.1.34-2nex1_amd64.deb
+Size: 30524
+MD5sum: 140f369aff4ddcbffb275953b1dd11e7
+SHA256: 2f8bfd00e5045225ffe3b8b86c2fc43fb1fc68d701273c5fc4d02c753ba8e435
+
+Package: nexphp82-mbstring
+Version: 8.2.36-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 1328
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp82 (= 8.2.36-2nex1)
+Homepage: https://nexspace.dev
+Description: Multibyte String extension for NexPHP 8.2
+ Modular shared extension package for nexphp82 (8.2).
+Filename: pool/main/n/nexphp82-mbstring/nexphp82-mbstring_8.2.36-2nex1_amd64.deb
+Size: 531840
+MD5sum: 7c3249fbd327d378bbf0aa6a556c9a77
+SHA256: b8c69dbb071a1a52855a8151864a7d403b5a3292568f01d0fe1bb7435f4efc3a
+
+Package: nexphp81-mbstring
+Version: 8.1.34-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 1172
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp81 (= 8.1.34-2nex1)
+Homepage: https://nexspace.dev
+Description: Multibyte String extension for NexPHP 8.1
+ Modular shared extension package for nexphp81 (8.1).
+Filename: pool/main/n/nexphp81-mbstring/nexphp81-mbstring_8.1.34-2nex1_amd64.deb
+Size: 474356
+MD5sum: 400fa78d3b484050d9460742b0082d35
+SHA256: b6e7f471b8012e8bd2d92988362cac2dc0d7152e1fc13a68dc12e72c51c3c84a
+
+Package: nexphp81-soap
+Version: 8.1.34-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 436
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp81 (= 8.1.34-2nex1)
+Homepage: https://nexspace.dev
+Description: SOAP extension for NexPHP 8.1
+ Modular shared extension package for nexphp81 (8.1).
+Filename: pool/main/n/nexphp81-soap/nexphp81-soap_8.1.34-2nex1_amd64.deb
+Size: 146282
+MD5sum: c0c8bbb1c8924cdc2d9a69a7f73ac203
+SHA256: 9c8c6407657f90eb725516539d54cc473cd1649a1075a7b1ada1ed9a03257724
+
+Package: nexphp83-common
+Version: 8.3.37-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 8344
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp83 (= 8.3.37-2nex1)
+Homepage: https://nexspace.dev
+Description: Common extensions (ctype, tokenizer, fileinfo, exif, bcmath, sockets) for NexPHP 8.3
+ Modular shared extension package for nexphp83 (8.3).
+Filename: pool/main/n/nexphp83-common/nexphp83-common_8.3.37-2nex1_amd64.deb
+Size: 438424
+MD5sum: 84417ba62f68a883bf4654ded4e510a4
+SHA256: 1873d844e8374665fbaf54c3e99785161cb7f0f935930f7951da1b526666201a
+
+Package: nexphp81-intl
+Version: 8.1.34-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 644
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp81 (= 8.1.34-2nex1)
+Homepage: https://nexspace.dev
+Description: Internationalization (intl) extension for NexPHP 8.1
+ Modular shared extension package for nexphp81 (8.1).
+Filename: pool/main/n/nexphp81-intl/nexphp81-intl_8.1.34-2nex1_amd64.deb
+Size: 158704
+MD5sum: 17aad066eb383c4bcf79f5afb00da466
+SHA256: 6f0f75f0d75e1852515d09cb141fc4332749eadf2d328a5fbde82a5e8c2d78de
+
+Package: nexphp83-soap
+Version: 8.3.37-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 448
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp83 (= 8.3.37-2nex1)
+Homepage: https://nexspace.dev
+Description: SOAP extension for NexPHP 8.3
+ Modular shared extension package for nexphp83 (8.3).
+Filename: pool/main/n/nexphp83-soap/nexphp83-soap_8.3.37-2nex1_amd64.deb
+Size: 153592
+MD5sum: 158cf57f0ef6007955cebd52dd1ef360
+SHA256: 964ddbde1db68671f221809178c249b3eb1020f1a88c245cb87b2134e733680a
+
+Package: nexphp82-gd
+Version: 8.2.36-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 476
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp82 (= 8.2.36-2nex1)
+Homepage: https://nexspace.dev
+Description: GD image processing extension for NexPHP 8.2
+ Modular shared extension package for nexphp82 (8.2).
+Filename: pool/main/n/nexphp82-gd/nexphp82-gd_8.2.36-2nex1_amd64.deb
+Size: 123484
+MD5sum: fdbbc35e3a92703c0d0f657cea3fd7ac
+SHA256: 882ff48cdf25ec8feaec90aa7c41711acb04cf75798300b35d5e374b2c73401d
+
+Package: nexphp82-zip
+Version: 8.2.36-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 164
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp82 (= 8.2.36-2nex1)
+Homepage: https://nexspace.dev
+Description: Zip archive extension for NexPHP 8.2
+ Modular shared extension package for nexphp82 (8.2).
+Filename: pool/main/n/nexphp82-zip/nexphp82-zip_8.2.36-2nex1_amd64.deb
+Size: 30480
+MD5sum: 20da7b3cfd8bb6879645218519be9df0
+SHA256: f4c558fb6b1413b41bb5108fb3341b2f3752d26a143420e974acddaeab24886c
+
+Package: nexphp84-pcntl
+Version: 8.4.28-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 120
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp84 (= 8.4.28-2nex1)
+Homepage: https://nexspace.dev
+Description: Process Control extension for NexPHP 8.4
+ Modular shared extension package for nexphp84 (8.4).
+Filename: pool/main/n/nexphp84-pcntl/nexphp84-pcntl_8.4.28-2nex1_amd64.deb
+Size: 19988
+MD5sum: e46454f5948136e21bdd37864f6158db
+SHA256: 68432bfbdf2e686946e42e5d2fc369c725cb6999d59e8632e79673ce03988323
+
+Package: nexphp82-intl
+Version: 8.2.36-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 740
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp82 (= 8.2.36-2nex1)
+Homepage: https://nexspace.dev
+Description: Internationalization (intl) extension for NexPHP 8.2
+ Modular shared extension package for nexphp82 (8.2).
+Filename: pool/main/n/nexphp82-intl/nexphp82-intl_8.2.36-2nex1_amd64.deb
+Size: 173066
+MD5sum: a6f5cfd89715aa0dc6d47ae9ad36547a
+SHA256: 860b7c3cc4d04a1539d3ecc067192a3f935d52b645a8431554bfe54f44dfaeb4
+
+Package: nexphp84-curl
+Version: 8.4.28-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 208
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp84 (= 8.4.28-2nex1)
+Homepage: https://nexspace.dev
+Description: cURL extension for NexPHP 8.4
+ Modular shared extension package for nexphp84 (8.4).
+Filename: pool/main/n/nexphp84-curl/nexphp84-curl_8.4.28-2nex1_amd64.deb
+Size: 46194
+MD5sum: 256544a5a5f40b79551552097cdb14b3
+SHA256: 0de44ab354d26d2c8688389902423b9cd74cdc6962192a8c723419d4c7f75d33
+
+Package: nexphp83-gd
+Version: 8.3.37-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 476
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp83 (= 8.3.37-2nex1)
+Homepage: https://nexspace.dev
+Description: GD image processing extension for NexPHP 8.3
+ Modular shared extension package for nexphp83 (8.3).
+Filename: pool/main/n/nexphp83-gd/nexphp83-gd_8.3.37-2nex1_amd64.deb
+Size: 123676
+MD5sum: 1c1cd9af4f89f5c8b623dd1585cce9e8
+SHA256: 3fde5cf072baee235729a7f5018ac5a4d6fc83a47af7f905d952fd68462477d2
+
+Package: nexphp80
+Version: 8.0.30-1nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 4852
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: libc6 (>= 2.34), libssl3, zlib1g
+Recommends: nexengine
+Homepage: https://nexspace.dev
+Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.0
+ Ultra-high performance PHP 8.0 execution runtime powered by NexEngine
+ Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
+ Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
+Filename: pool/main/n/nexphp80/nexphp80_8.0.30-1nex1_amd64.deb
+Size: 1577568
+MD5sum: 911c628fd15444e17bfc741cacb9f1c2
+SHA256: 0ee34919235c3c4b16ad954d1ae01410e286158319b04a7d34493c8f58c62bf4
+
+Package: nexphp80
+Version: 8.0.30-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 4864
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: libc6 (>= 2.34), libssl3, zlib1g
+Recommends: nexengine
+Homepage: https://nexspace.dev
+Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.0
+ Ultra-high performance PHP 8.0 execution runtime powered by NexEngine
+ Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
+ Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
+Filename: pool/main/n/nexphp80/nexphp80_8.0.30-2nex1_amd64.deb
+Size: 1579648
+MD5sum: 2d5674faad8bdc64340abf77cfb16cb4
+SHA256: eee35b8835a3d2d5fe98d1507084832b41f05604b863ca7c95b0f234aed812a9
+
+Package: nexphp74
+Version: 7.4.33-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 4688
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: libc6 (>= 2.34), libssl3, zlib1g
+Recommends: nexengine
+Homepage: https://nexspace.dev
+Description: NexPHP Native SAPI High-Performance Runtime for PHP 7.4
+ Ultra-high performance PHP 7.4 execution runtime powered by NexEngine
+ Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
+ Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
+Filename: pool/main/n/nexphp74/nexphp74_7.4.33-2nex1_amd64.deb
+Size: 1531596
+MD5sum: e47ec196b497902b492b874c53b71a8b
+SHA256: 9ce82dd3c43570c2e8b394652f3c0b4f92d508a9106667e99982da6c72e11f19
+
+Package: nexphp74
+Version: 7.4.33-1nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 4676
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: libc6 (>= 2.34), libssl3, zlib1g
+Recommends: nexengine
+Homepage: https://nexspace.dev
+Description: NexPHP Native SAPI High-Performance Runtime for PHP 7.4
+ Ultra-high performance PHP 7.4 execution runtime powered by NexEngine
+ Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
+ Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
+Filename: pool/main/n/nexphp74/nexphp74_7.4.33-1nex1_amd64.deb
+Size: 1531354
+MD5sum: b69ce387e7aad069024cd3e4d31701a4
+SHA256: 1c3d4fae83ccac2567fad86587129ed59d7fc3d1f319382c5bc5a5875a47e71d
+
 Package: nexphp84
 Version: 8.4.27-1nex1
 Section: web
@@ -93,6 +435,511 @@ Size: 1969460
 MD5sum: d9c0d60f15390356aeb04e0853a4ac8f
 SHA256: f3c025b2ae861d632293363029f747b1f6c6f459cc1136aa8ed0f66413461213
 
+Package: nexphp84
+Version: 8.4.28-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 20464
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: libc6 (>= 2.34), libssl3, zlib1g
+Recommends: nexengine
+Homepage: https://nexspace.dev
+Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.4
+ Ultra-high performance PHP 8.4 execution runtime powered by NexEngine
+ Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
+ Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
+Filename: pool/main/n/nexphp84/nexphp84_8.4.28-2nex1_amd64.deb
+Size: 6402772
+MD5sum: c5415b49b7fc6ced10bb23dc205fcd54
+SHA256: f1ac84cb70e5a382dd991424dc8b1c2594f3d5cb1792a68b76dfd3f0ef967b2d
+
+Package: nexphp83-xml
+Version: 8.3.37-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 492
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp83 (= 8.3.37-2nex1)
+Homepage: https://nexspace.dev
+Description: XML extensions (dom, simplexml, xml) for NexPHP 8.3
+ Modular shared extension package for nexphp83 (8.3).
+Filename: pool/main/n/nexphp83-xml/nexphp83-xml_8.3.37-2nex1_amd64.deb
+Size: 122102
+MD5sum: 3fdecdec8c4c3b2baa4a7841d2c7bbe7
+SHA256: 482a83ffedc899678275e40163e74392b566e8b9d752bbf67c8557aecf9904bd
+
+Package: nexphp82-mysql
+Version: 8.2.36-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 456
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp82 (= 8.2.36-2nex1)
+Homepage: https://nexspace.dev
+Description: MySQL/MariaDB extensions (pdo, pdo_mysql, mysqli) for NexPHP 8.2
+ Modular shared extension package for nexphp82 (8.2).
+Filename: pool/main/n/nexphp82-mysql/nexphp82-mysql_8.2.36-2nex1_amd64.deb
+Size: 108024
+MD5sum: 7cfe54506bd83d07479c382eb7e31989
+SHA256: 1d00716bfbeab0b25defe536789c6f966f1b58d7339d8d6329fbf060dd504932
+
+Package: nexphp84-mbstring
+Version: 8.4.28-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 1360
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp84 (= 8.4.28-2nex1)
+Homepage: https://nexspace.dev
+Description: Multibyte String extension for NexPHP 8.4
+ Modular shared extension package for nexphp84 (8.4).
+Filename: pool/main/n/nexphp84-mbstring/nexphp84-mbstring_8.4.28-2nex1_amd64.deb
+Size: 546308
+MD5sum: 776b145b2e769c265ece863c782a7245
+SHA256: 58408e3e0eba88a165465cfafb8cbd96a4f60b2960f972d02b0321e7860b05f8
+
+Package: nexphp82-soap
+Version: 8.2.36-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 452
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp82 (= 8.2.36-2nex1)
+Homepage: https://nexspace.dev
+Description: SOAP extension for NexPHP 8.2
+ Modular shared extension package for nexphp82 (8.2).
+Filename: pool/main/n/nexphp82-soap/nexphp82-soap_8.2.36-2nex1_amd64.deb
+Size: 153088
+MD5sum: 99d87804c72535bfc3b603ff36148d51
+SHA256: b7feef779bc3fed87d906f3d4ba5928d044c4e8cc5c5cae5da1834fe779a5c1d
+
+Package: nexphp81-gd
+Version: 8.1.34-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 476
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp81 (= 8.1.34-2nex1)
+Homepage: https://nexspace.dev
+Description: GD image processing extension for NexPHP 8.1
+ Modular shared extension package for nexphp81 (8.1).
+Filename: pool/main/n/nexphp81-gd/nexphp81-gd_8.1.34-2nex1_amd64.deb
+Size: 123500
+MD5sum: a999fec73417b03df72f3ed0a2d7deaa
+SHA256: f37e9e2fc3648718359b2e010ae11250443afbab72881bbea358247a20e201c0
+
+Package: nexphp82
+Version: 8.2.36-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 19372
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: libc6 (>= 2.34), libssl3, zlib1g
+Recommends: nexengine
+Homepage: https://nexspace.dev
+Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.2
+ Ultra-high performance PHP 8.2 execution runtime powered by NexEngine
+ Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
+ Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
+Filename: pool/main/n/nexphp82/nexphp82_8.2.36-2nex1_amd64.deb
+Size: 5771764
+MD5sum: 7f9cddada01262625f0130cdff3707cf
+SHA256: 9a07adfb9f02cb0ba555e38b720e46938a11a226c8879d497b0ae2b11a0c2b30
+
+Package: nexphp82
+Version: 8.2.35-1nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 5568
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: libc6 (>= 2.34), libssl3, zlib1g
+Recommends: nexengine
+Homepage: https://nexspace.dev
+Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.2
+ Ultra-high performance PHP 8.2 execution runtime powered by NexEngine
+ Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
+ Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
+Filename: pool/main/n/nexphp82/nexphp82_8.2.35-1nex1_amd64.deb
+Size: 1850934
+MD5sum: 1b0ce7883923951120a6edb35f8f43c6
+SHA256: aab111f15c3ed8a52b703b2382062602c29eac3d1b3a2246660d75ac6c372881
+
+Package: nexphp81-xml
+Version: 8.1.34-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 464
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp81 (= 8.1.34-2nex1)
+Homepage: https://nexspace.dev
+Description: XML extensions (dom, simplexml, xml) for NexPHP 8.1
+ Modular shared extension package for nexphp81 (8.1).
+Filename: pool/main/n/nexphp81-xml/nexphp81-xml_8.1.34-2nex1_amd64.deb
+Size: 113218
+MD5sum: e6c2dec417e505acf140aa29373e6fa8
+SHA256: 312cbb737a36c3292a3d2fb7db9c430be6e4d28d7c5c4bddd7c89afac29296b7
+
+Package: nexphp82-curl
+Version: 8.2.36-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 196
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp82 (= 8.2.36-2nex1)
+Homepage: https://nexspace.dev
+Description: cURL extension for NexPHP 8.2
+ Modular shared extension package for nexphp82 (8.2).
+Filename: pool/main/n/nexphp82-curl/nexphp82-curl_8.2.36-2nex1_amd64.deb
+Size: 42194
+MD5sum: 41a009000031290359d8a701433f6dfc
+SHA256: a51f7ce09bbe0cfe3ff0c236b4ba7a9e4478f07c0a78c1a6f48cbed26eeebd11
+
+Package: nexphp82-common
+Version: 8.2.36-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 7428
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp82 (= 8.2.36-2nex1)
+Homepage: https://nexspace.dev
+Description: Common extensions (ctype, tokenizer, fileinfo, exif, bcmath, sockets) for NexPHP 8.2
+ Modular shared extension package for nexphp82 (8.2).
+Filename: pool/main/n/nexphp82-common/nexphp82-common_8.2.36-2nex1_amd64.deb
+Size: 403098
+MD5sum: 545a509eb647744dc101b26f83c4ec2f
+SHA256: 2bf38a794e8434f043c7457b55b21b5aea6763d85e74f508770ca1a63dc68df3
+
+Package: nexphp81-curl
+Version: 8.1.34-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 188
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp81 (= 8.1.34-2nex1)
+Homepage: https://nexspace.dev
+Description: cURL extension for NexPHP 8.1
+ Modular shared extension package for nexphp81 (8.1).
+Filename: pool/main/n/nexphp81-curl/nexphp81-curl_8.1.34-2nex1_amd64.deb
+Size: 40080
+MD5sum: 26ecb6bc1a8f78d7c1cde1e0705a3459
+SHA256: 92bd029f1be470afb613c00329ff5a6da3cca5ef1c8b70ffa48bc5cfeaba6107
+
+Package: nexphp84-all
+Version: 8.4.28-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 1
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp84 (= 8.4.28-2nex1), nexphp84-common (= 8.4.28-2nex1), nexphp84-mysql (= 8.4.28-2nex1), nexphp84-xml (= 8.4.28-2nex1), nexphp84-mbstring (= 8.4.28-2nex1), nexphp84-curl (= 8.4.28-2nex1), nexphp84-gd (= 8.4.28-2nex1), nexphp84-intl (= 8.4.28-2nex1), nexphp84-zip (= 8.4.28-2nex1), nexphp84-soap (= 8.4.28-2nex1), nexphp84-sodium (= 8.4.28-2nex1), nexphp84-pcntl (= 8.4.28-2nex1)
+Homepage: https://nexspace.dev
+Description: Meta-package installing NexPHP 8.4 with all standard modular extensions
+ Installs nexphp84 core plus all standard shared extensions.
+Filename: pool/main/n/nexphp84-all/nexphp84-all_8.4.28-2nex1_amd64.deb
+Size: 690
+MD5sum: 3143778ba9ca6e240bfc669331015a44
+SHA256: b82fce4cd6b54c5fa6e2f3a4edb91fa7ecb29fd4a05070a646b047aae393681e
+
+Package: nexphp81-pcntl
+Version: 8.1.34-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 104
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp81 (= 8.1.34-2nex1)
+Homepage: https://nexspace.dev
+Description: Process Control extension for NexPHP 8.1
+ Modular shared extension package for nexphp81 (8.1).
+Filename: pool/main/n/nexphp81-pcntl/nexphp81-pcntl_8.1.34-2nex1_amd64.deb
+Size: 14462
+MD5sum: 4288e3df49f3f22809eeb4bb2236d897
+SHA256: 1301295fc1a04122945fa7546e236f6cf089f84018d1860718042fa1114876aa
+
+Package: nexphp82-pcntl
+Version: 8.2.36-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 108
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp82 (= 8.2.36-2nex1)
+Homepage: https://nexspace.dev
+Description: Process Control extension for NexPHP 8.2
+ Modular shared extension package for nexphp82 (8.2).
+Filename: pool/main/n/nexphp82-pcntl/nexphp82-pcntl_8.2.36-2nex1_amd64.deb
+Size: 16190
+MD5sum: 5924deff3457c40d5f79810ba12d76d6
+SHA256: 9fbd4cbcdbc7e293a064fbfca4e8ab53d56111975f5d450a95350b0fd28f77db
+
+Package: nexphp83-all
+Version: 8.3.37-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 1
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp83 (= 8.3.37-2nex1), nexphp83-common (= 8.3.37-2nex1), nexphp83-mysql (= 8.3.37-2nex1), nexphp83-xml (= 8.3.37-2nex1), nexphp83-mbstring (= 8.3.37-2nex1), nexphp83-curl (= 8.3.37-2nex1), nexphp83-gd (= 8.3.37-2nex1), nexphp83-intl (= 8.3.37-2nex1), nexphp83-zip (= 8.3.37-2nex1), nexphp83-soap (= 8.3.37-2nex1), nexphp83-sodium (= 8.3.37-2nex1), nexphp83-pcntl (= 8.3.37-2nex1)
+Homepage: https://nexspace.dev
+Description: Meta-package installing NexPHP 8.3 with all standard modular extensions
+ Installs nexphp83 core plus all standard shared extensions.
+Filename: pool/main/n/nexphp83-all/nexphp83-all_8.3.37-2nex1_amd64.deb
+Size: 690
+MD5sum: 2731753d57fbe3ec3d380a031251ebfc
+SHA256: 6f43e141f63c4197a08326c42400376fb455eb030986d629da7eae15d4530ad0
+
+Package: nexphp82-all
+Version: 8.2.36-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 1
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp82 (= 8.2.36-2nex1), nexphp82-common (= 8.2.36-2nex1), nexphp82-mysql (= 8.2.36-2nex1), nexphp82-xml (= 8.2.36-2nex1), nexphp82-mbstring (= 8.2.36-2nex1), nexphp82-curl (= 8.2.36-2nex1), nexphp82-gd (= 8.2.36-2nex1), nexphp82-intl (= 8.2.36-2nex1), nexphp82-zip (= 8.2.36-2nex1), nexphp82-soap (= 8.2.36-2nex1), nexphp82-sodium (= 8.2.36-2nex1), nexphp82-pcntl (= 8.2.36-2nex1)
+Homepage: https://nexspace.dev
+Description: Meta-package installing NexPHP 8.2 with all standard modular extensions
+ Installs nexphp82 core plus all standard shared extensions.
+Filename: pool/main/n/nexphp82-all/nexphp82-all_8.2.36-2nex1_amd64.deb
+Size: 690
+MD5sum: 6f5314fd0c2ad1fb0cbdc9c4ba23141c
+SHA256: d79b7b7fe3deef4a71c0299e49850fd83640a8e3e189eaaed5f75afb151aac1e
+
+Package: nexphp83-pcntl
+Version: 8.3.37-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 108
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp83 (= 8.3.37-2nex1)
+Homepage: https://nexspace.dev
+Description: Process Control extension for NexPHP 8.3
+ Modular shared extension package for nexphp83 (8.3).
+Filename: pool/main/n/nexphp83-pcntl/nexphp83-pcntl_8.3.37-2nex1_amd64.deb
+Size: 16436
+MD5sum: f94ef1e809bbd9bec42527f62bc1fc61
+SHA256: a06a00f11c0fc0ec41c96daab4410f46082b9b0d83eadff5ace53e756ac9cb4f
+
+Package: nexphp84-common
+Version: 8.4.28-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 8944
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp84 (= 8.4.28-2nex1)
+Homepage: https://nexspace.dev
+Description: Common extensions (ctype, tokenizer, fileinfo, exif, bcmath, sockets) for NexPHP 8.4
+ Modular shared extension package for nexphp84 (8.4).
+Filename: pool/main/n/nexphp84-common/nexphp84-common_8.4.28-2nex1_amd64.deb
+Size: 479698
+MD5sum: 24ff59035544c7ba9266c26d17e8e5c6
+SHA256: a9614684890973dc6cbc2531c3e13316571bbd5d32898f3c1b68c7d6956a2751
+
+Package: nexphp83-zip
+Version: 8.3.37-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 176
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp83 (= 8.3.37-2nex1)
+Homepage: https://nexspace.dev
+Description: Zip archive extension for NexPHP 8.3
+ Modular shared extension package for nexphp83 (8.3).
+Filename: pool/main/n/nexphp83-zip/nexphp83-zip_8.3.37-2nex1_amd64.deb
+Size: 31940
+MD5sum: 898ffbe8bf27d6e2951036c9e8bc2565
+SHA256: c09c89e5c272757c8468f696f36e1b32a67754c505908f6139db21323dd32eb4
+
+Package: nexphp84-soap
+Version: 8.4.28-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 464
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp84 (= 8.4.28-2nex1)
+Homepage: https://nexspace.dev
+Description: SOAP extension for NexPHP 8.4
+ Modular shared extension package for nexphp84 (8.4).
+Filename: pool/main/n/nexphp84-soap/nexphp84-soap_8.4.28-2nex1_amd64.deb
+Size: 155816
+MD5sum: 757a14472696834f8c3ad3c0ec0b8472
+SHA256: 6127cecdbd0b9c906a03c4c41e6dd70fe154eae8932e9c00bf0634ef5286f636
+
+Package: nexphp81-all
+Version: 8.1.34-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 1
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp81 (= 8.1.34-2nex1), nexphp81-common (= 8.1.34-2nex1), nexphp81-mysql (= 8.1.34-2nex1), nexphp81-xml (= 8.1.34-2nex1), nexphp81-mbstring (= 8.1.34-2nex1), nexphp81-curl (= 8.1.34-2nex1), nexphp81-gd (= 8.1.34-2nex1), nexphp81-intl (= 8.1.34-2nex1), nexphp81-zip (= 8.1.34-2nex1), nexphp81-soap (= 8.1.34-2nex1), nexphp81-sodium (= 8.1.34-2nex1), nexphp81-pcntl (= 8.1.34-2nex1)
+Homepage: https://nexspace.dev
+Description: Meta-package installing NexPHP 8.1 with all standard modular extensions
+ Installs nexphp81 core plus all standard shared extensions.
+Filename: pool/main/n/nexphp81-all/nexphp81-all_8.1.34-2nex1_amd64.deb
+Size: 688
+MD5sum: 57ad526526c551fb62c28bcfbdbdc394
+SHA256: 73f76cdb5292488d48a08d4fb03d975033ed03d16396110f5dfd8eba16f519e0
+
+Package: nexphp84-sodium
+Version: 8.4.28-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 188
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp84 (= 8.4.28-2nex1)
+Homepage: https://nexspace.dev
+Description: Sodium cryptography extension for NexPHP 8.4
+ Modular shared extension package for nexphp84 (8.4).
+Filename: pool/main/n/nexphp84-sodium/nexphp84-sodium_8.4.28-2nex1_amd64.deb
+Size: 31286
+MD5sum: 93d179ee8ab78e0c6607cb1d1e9f5dc4
+SHA256: a7b78e323566d60c892bd1b76dfa662dcffb311534692d044ed2a5a51927bcb3
+
+Package: nexphp83-mbstring
+Version: 8.3.37-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 1336
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp83 (= 8.3.37-2nex1)
+Homepage: https://nexspace.dev
+Description: Multibyte String extension for NexPHP 8.3
+ Modular shared extension package for nexphp83 (8.3).
+Filename: pool/main/n/nexphp83-mbstring/nexphp83-mbstring_8.3.37-2nex1_amd64.deb
+Size: 537702
+MD5sum: 602aded99773986d2215086a5237d471
+SHA256: 1ab80739df3a3ccf967612c237ee62910ae369d321811a5fec02a7e81271961b
+
+Package: nexphp83-curl
+Version: 8.3.37-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 200
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp83 (= 8.3.37-2nex1)
+Homepage: https://nexspace.dev
+Description: cURL extension for NexPHP 8.3
+ Modular shared extension package for nexphp83 (8.3).
+Filename: pool/main/n/nexphp83-curl/nexphp83-curl_8.3.37-2nex1_amd64.deb
+Size: 43542
+MD5sum: 156e2f23ab499a784c6437215845ec35
+SHA256: 60b8ef4dbc694e26f6e091111cb83f75684fbd1e2d9fd61a7913aefaafaafe8d
+
+Package: nexphp83-mysql
+Version: 8.3.37-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 456
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp83 (= 8.3.37-2nex1)
+Homepage: https://nexspace.dev
+Description: MySQL/MariaDB extensions (pdo, pdo_mysql, mysqli) for NexPHP 8.3
+ Modular shared extension package for nexphp83 (8.3).
+Filename: pool/main/n/nexphp83-mysql/nexphp83-mysql_8.3.37-2nex1_amd64.deb
+Size: 108058
+MD5sum: 87c7b3da6aefc4c4e67de13c6e2d3d36
+SHA256: 37ec67e4f64ea7312ccefec7bbd071102166b4c839e81e4c9e583ca1d05612a6
+
+Package: nexphp84-mysql
+Version: 8.4.28-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 476
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp84 (= 8.4.28-2nex1)
+Homepage: https://nexspace.dev
+Description: MySQL/MariaDB extensions (pdo, pdo_mysql, mysqli) for NexPHP 8.4
+ Modular shared extension package for nexphp84 (8.4).
+Filename: pool/main/n/nexphp84-mysql/nexphp84-mysql_8.4.28-2nex1_amd64.deb
+Size: 113500
+MD5sum: baf2ffcac7da983b33019cf64feaee54
+SHA256: b36bfd4783d95833e451110eabe13161ba3509e4dc61dccfcd9d4806b8566791
+
+Package: nexphp81-zip
+Version: 8.1.34-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 152
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp81 (= 8.1.34-2nex1)
+Homepage: https://nexspace.dev
+Description: Zip archive extension for NexPHP 8.1
+ Modular shared extension package for nexphp81 (8.1).
+Filename: pool/main/n/nexphp81-zip/nexphp81-zip_8.1.34-2nex1_amd64.deb
+Size: 28022
+MD5sum: 812986ee2b2d8fb40c05be2c6c3dcf91
+SHA256: 53ff788577b043cd658e1114a85c145892a13ac585f1fb374aafaa131a246099
+
+Package: nexphp82-sodium
+Version: 8.2.36-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 188
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp82 (= 8.2.36-2nex1)
+Homepage: https://nexspace.dev
+Description: Sodium cryptography extension for NexPHP 8.2
+ Modular shared extension package for nexphp82 (8.2).
+Filename: pool/main/n/nexphp82-sodium/nexphp82-sodium_8.2.36-2nex1_amd64.deb
+Size: 31346
+MD5sum: db31c6d10319db96ae6f9a280a9288e8
+SHA256: fc627a5adfd5d15856242099740a8776824f5f3cb83c479a2aa9992bed010dee
+
+Package: nexphp84-zip
+Version: 8.4.28-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 184
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp84 (= 8.4.28-2nex1)
+Homepage: https://nexspace.dev
+Description: Zip archive extension for NexPHP 8.4
+ Modular shared extension package for nexphp84 (8.4).
+Filename: pool/main/n/nexphp84-zip/nexphp84-zip_8.4.28-2nex1_amd64.deb
+Size: 34226
+MD5sum: 9e50805387ecd0469c62799b4675150d
+SHA256: a106474a12d1147ec7245da25d169f2dcf48359df35245122e2490d6dda7d7d5
+
+Package: nexphp81-mysql
+Version: 8.1.34-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 444
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp81 (= 8.1.34-2nex1)
+Homepage: https://nexspace.dev
+Description: MySQL/MariaDB extensions (pdo, pdo_mysql, mysqli) for NexPHP 8.1
+ Modular shared extension package for nexphp81 (8.1).
+Filename: pool/main/n/nexphp81-mysql/nexphp81-mysql_8.1.34-2nex1_amd64.deb
+Size: 104810
+MD5sum: 9d7c4e6b2f6e5f5488f9734996609e9a
+SHA256: 2ef2803e7cf597ee04a0f06f6c837d1880d9edef861d0aa60c8a997684625b03
+
 Package: nexphp81
 Version: 8.1.34-1nex1
 Section: web
@@ -111,4 +958,39 @@ Filename: pool/main/n/nexphp81/nexphp81_8.1.34-1nex1_amd64.deb
 Size: 1792572
 MD5sum: f7eaf07438b16aa476ff05d5e5787887
 SHA256: 8bea1662a3c05b0847163095e512578c6411c9b467f8f4368956c4c04e76bc6a
+
+Package: nexphp81
+Version: 8.1.34-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 18892
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: libc6 (>= 2.34), libssl3, zlib1g
+Recommends: nexengine
+Homepage: https://nexspace.dev
+Description: NexPHP Native SAPI High-Performance Runtime for PHP 8.1
+ Ultra-high performance PHP 8.1 execution runtime powered by NexEngine
+ Native C SAPI and Autonomous Supervisor with Zero-Copy Ring Buffer IPC.
+ Eliminates traditional FastCGI overhead and provides adaptive auto-scaling.
+Filename: pool/main/n/nexphp81/nexphp81_8.1.34-2nex1_amd64.deb
+Size: 5610780
+MD5sum: 4a2caa48ed8503207389566113121789
+SHA256: e477f7eca74f239ad52eacab1461718241aaf3b0643560a51b74af5efe9b2868
+
+Package: nexphp83-intl
+Version: 8.3.37-2nex1
+Section: web
+Priority: optional
+Architecture: amd64
+Installed-Size: 744
+Maintainer: NexSpace Engineering Team <core@nexspace.dev>
+Depends: nexphp83 (= 8.3.37-2nex1)
+Homepage: https://nexspace.dev
+Description: Internationalization (intl) extension for NexPHP 8.3
+ Modular shared extension package for nexphp83 (8.3).
+Filename: pool/main/n/nexphp83-intl/nexphp83-intl_8.3.37-2nex1_amd64.deb
+Size: 176948
+MD5sum: 41cfb632385b415d9664076c82d2cadd
+SHA256: 7406cc4de2dc1e3d39e0a70cc54fe0f9fba4006c1958bf27a06d68eef9394bf6
 

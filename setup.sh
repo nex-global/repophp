@@ -30,13 +30,21 @@ if [[ "${OS_ID}" =~ ^(almalinux|rocky|rhel|centos|fedora)$ ]] || [[ "${OS_LIKE}"
     echo "[INFO] Detected Enterprise Linux OS: ${PRETTY_NAME:-$OS_ID}"
     echo "[INFO] Configuring DNF/YUM repository (/etc/yum.repos.d/nexspace.repo)..."
 
+    echo "[INFO] Importing NexSpace GPG signing key..."
+    if ! curl -fsSL "${REPO_URL}/nexspace.gpg" -o /etc/pki/rpm-gpg/RPM-GPG-KEY-nexspace; then
+        echo "[ERROR] Failed to download ${REPO_URL}/nexspace.gpg — refusing unsigned RPM repository!" >&2
+        exit 1
+    fi
+    rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-nexspace
+
     cat << REPO_EOF > /etc/yum.repos.d/nexspace.repo
 [nexspace-runtimes]
 name=NexSpace Official PHP & SAPI Repository - Enterprise Linux 9 (\$basearch)
 baseurl=${REPO_URL}/rpm/el9/\$basearch
 enabled=1
-gpgcheck=0
-repo_gpgcheck=0
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-nexspace
 metadata_expire=300
 REPO_EOF
 
@@ -67,10 +75,12 @@ else
 
     mkdir -p "${KEYRING_DIR}" "${SOURCES_DIR}"
 
-    if curl -s -f "${REPO_URL}/nexspace.gpg" -o "${KEYRING_DIR}/nexspace.gpg" 2>/dev/null; then
+    if curl -fsSL "${REPO_URL}/nexspace.gpg" -o "${KEYRING_DIR}/nexspace.gpg"; then
+        chmod 644 "${KEYRING_DIR}/nexspace.gpg"
         echo "deb [signed-by=${KEYRING_DIR}/nexspace.gpg] ${REPO_URL} ${CODENAME} main" > "${SOURCES_DIR}/nexspace.list"
     else
-        echo "deb [trusted=yes] ${REPO_URL} ${CODENAME} main" > "${SOURCES_DIR}/nexspace.list"
+        echo "[ERROR] Failed to download ${REPO_URL}/nexspace.gpg — refusing unsigned APT repository!" >&2
+        exit 1
     fi
 
     echo "  [OK] Created source file: ${SOURCES_DIR}/nexspace.list"

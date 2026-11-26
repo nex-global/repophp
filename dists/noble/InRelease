@@ -1,0 +1,37 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Origin: NexSpace
+Label: NexSpace Runtimes Repository
+Suite: noble
+Codename: noble
+Date: Thu, 26 Nov 2026 05:05:38 UTC
+Architectures: amd64 arm64
+Components: main
+Description: Official High-Performance NexEngine & NexPHP Native Runtimes
+MD5Sum:
+ 773a310b8474a019374f46359aaae560 5234 main/binary-arm64/Packages
+ 5dabfe64606df58a153e41c066755952 1136 main/binary-arm64/Packages.gz
+ d2a62d95beb9478002fc79092a64e619 37293 main/binary-amd64/Packages
+ e4a5c8f8f49aaa6daaf21bfecace0346 6677 main/binary-amd64/Packages.gz
+SHA256:
+ 8427372e2a34f14e723f33df74cdfe5fa7f42b770c27dda6abd74ce47563d1b7 5234 main/binary-arm64/Packages
+ 8c3df820f19c7295459cb6b796d49dd5cbd9fbefe0e55b0578c2ddb19291858d 1136 main/binary-arm64/Packages.gz
+ 738b05ce1519c04898f3ebf3b637d1f2d74db4a4f99bada9d256a832c67a2294 37293 main/binary-amd64/Packages
+ fa64e2e5f46a889b5073418259a45dbaffe73e486b2c01ef76c67e05e03ce7de 6677 main/binary-amd64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEuCRoZGqa0S4XClgmpZKClx697VEFAmsHviIACgkQpZKClx69
+7VHRNxAAkwOlHn7es45xaIBpUE+WbvYn9+9P+ddHQP20YDAicqkfkltSzQ9/ijhK
+HnlKhT66GlakK8dBGyw+8ZDQ+DsBupzvHFpbSTOTErzlma2qInPpZvQctamlOzf2
+Gkn9iQ80u6RnRe8FXDnBtY4C6Jf4ih2ULktSZ1S10jjeTKdygQu/ub5W6IZBO8HE
+aijY4M//BILpAcYQqGtpLTH4T7ovWe7QXeo5qP+tJ66M4HZkTB6xL8ammgyeURp5
+o2I+5Dbc9HcsfXN3IWP1M8YSlskaKI+R0q1F6vVQPcpj9J1bLl9tIsxGGcxWDdlw
+sRbAMGIksWzOcC/nHnRDgPju1pVZdU77F3eUzYdAp3TfebhGnL4xcKyoiWmyIi5/
+I64Vf+n0KqR4KsjtYD/ay4ybyqirSVc/Ii9QnWJxha97+qpjJNfOuC86LxcDcduc
+Eod6XEvQDhWNG0aVUobZvd+Fr19xIJ3hmgnLd95l5wqEu+4RHWecD1mU5oVB8ZhZ
+9CuTIwisU4TaMqqtDsEulAMTrMVQkgQ3GeLR0+mx/rD3tPbUgXIeqGIaJGtCATjA
+j5mmpic2chLyKcpOX/yy8pQ4YWD8bGSBIlzMds8mWv5KaTIla+s0R2RXtgPL8hT3
+lAtvWAufuviMXX850s0Rm2A2AX3HeveWIYqtK8tPDGg+//F89u4=
+=byHL
+-----END PGP SIGNATURE-----
